@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Assignment 1}
+
+\author{Chris Hayduk}
+\date{\today}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Suppose $f: X \to Y$ is onto.\\
+
+Let $B \subset Y$ be nonempty. Thus, $\exists b \in B$.\\
+
+Suppose $f^{-1}(B) = \emptyset$. This implies that there is no $x \in X$ such that $f(x) = b$.\\
+
+However, by the definition of onto, $\forall y \in Y$, $\exists x \in X$ such that $f(x) = y$. Since $b \in B \subset Y$ and $f$ is assumed to be onto, this definition applies.\\
+
+Thus, we have a contradiction and $f^{-1}(B) \neq \emptyset$.
+
+\begin{problem}{2}
+\end{problem}
+
+Let $\mathscr{A}$ be a collection of sets and assume properties (ii) and (iii) from the question.\\
+
+Let $A, B \in \mathscr{A}$. By property (ii), $\tilde{A}, \tilde{B} \in \mathscr{A}$ as well.\\
+
+Thus, by property (iii),
+\begin{align*}
+\tilde{A} \, \cap \, \tilde{B} &\in \mathscr{A}
+\end{align*}
+
+Then, by (ii) and DeMorgan's Laws, we have,
+\begin{align*}
+&\widetilde{\tilde{A} \cap \tilde{B}} \in \mathscr{A}\\
+\implies &\tilde{\tilde{A}} \, \cup \, \tilde{\tilde{B}} \in \mathscr{A}\\
+\implies &A \, \cup \, B \in \mathscr{A}
+\end{align*}
+
+Thus, by properties (ii) and (iii), whenever $A, B \in \mathscr{A}$, $A \cup B \in \mathscr{A}$ as well.
+
+\newpage
+\begin{problem}{3}
+\end{problem}
+
+\end{document}
