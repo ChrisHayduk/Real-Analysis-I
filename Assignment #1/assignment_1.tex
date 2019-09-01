@@ -75,4 +75,44 @@ Thus, by properties (ii) and (iii), whenever $A, B \in \mathscr{A}$, $A \cup B \
 \begin{problem}{3}
 \end{problem}
 
+Let $\mathscr{F}$ be the family of all $\sigma$-algebras that contain the collection $\mathscr{C}$ of subsets of $X$.\\
+
+We know that $P(X)$ is an algebra containing $\mathscr{C}$. Let there be a sequence of sets $(X_i)$ in $P(X)$. Since $P(X)$ contains only possible subsets of $X$, then $x \in X_k \implies x \in X$ for every $X_k \in (X_i)$. Hence, every element of each set in the sequence $(X_i)$ is contained in $X$.\\
+
+Thus, if we take the union of all sets in the sequence $(X_i)$, every element of $\bigcup\limits_{i=1}^{\infty} X_{i}$ is an element of $X$. In other words, 
+\begin{align*}
+&\bigcup\limits_{i=1}^{\infty} X_{i} \subset X
+\end{align*}
+
+Since $P(X)$ contains all possible subsets of $X$, 
+\begin{align*}
+&\bigcup\limits_{i=1}^{\infty} X_{i} \subset P(X)
+\end{align*}
+
+Since this holds for an arbitrary sequence $(X_i)$, we know that $P(X)$ is a $\sigma$-algebra. Thus, $P(X) \in \mathscr{F}$ and $\mathscr{F}$ is nonempty.\\
+
+Let $\mathscr{A} = \cap \{\mathscr{B} : \mathscr{B} \in \mathscr{F}\}$\\
+
+Since each $\mathscr{B} \in \mathscr{F}$ contains $\mathscr{C}$, then $\mathscr{C}$ is a subcollection of $\mathscr{A}$.\\
+
+If $A, B \in \mathscr{A}$, then $\forall \mathscr{B} \in \mathscr{F}, A, B \in \mathscr{B}$.\\
+
+Since each $\mathscr{B}$ is a $\sigma$-algebra, then $A \cap B, A \cup B \in \mathscr{B} \; \forall \mathscr{B} \in \mathscr{F}$. So we see that $A \cap B$ and $A \cup B \in \mathscr{A}$.\\
+
+Similarly, given an $A \in \mathscr{A}$, $A \in \mathscr{B} \; \forall \mathscr{B} \in \mathscr{F}$.\\
+
+Since each $\mathscr{B}$ is a $\sigma$-algebra, then $X \setminus A \in \mathscr{B}$ and because this holds $\forall \mathscr{B} \in \mathscr{F}$, then $X \setminus A \in \mathscr{A}$ as well.\\
+
+Therefore, $\mathscr{A}$ is an algebra.\\
+
+Now let there be a sequence of sets $(A_i) \in \mathscr{A}$. We have that $\forall \mathscr{B} \in \mathscr{F}, (A_i) \in \mathscr{B}$.\\
+
+Since every $\mathscr{B} \in \mathscr{F}$ is a $\sigma$-algebra, $\bigcup\limits_{i=1}^{\infty} A_{i} \subset \mathscr{B} \; \forall \mathscr{B} \in \mathscr{F}$. Thus, we see that $\bigcup\limits_{i=1}^{\infty} A_{i} \subset \mathscr{A}$.\\
+
+Hence, $\mathscr{A}$ is a $\sigma$-algebra.\\
+
+Now, let $\mathscr{B}$ be a $\sigma$-algebra containing $\mathscr{C}$. Then $\mathscr{B} \in \mathscr{F}$.\\
+
+Since $\mathscr{A} \subset \bigcap\limits_{\mathscr{B} \in \mathscr{F}} \mathscr{B}$, then $\mathscr{A} \subset \mathscr{B}$, so $\mathscr{A}$ is the smallest such $\sigma$-algebra.
+
 \end{document}
