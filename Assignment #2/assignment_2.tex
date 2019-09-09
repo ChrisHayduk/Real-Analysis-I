@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Assignment 2}
+
+\author{Chris Hayduk}
+\date{September 12, 2019}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Let the relation $R$ be $\leq$ on the set of real numbers $\mathbb{R}$. Now let $A = \mathbb{R} \cup c$ for some $c$ that cannot be compared to any $x \in \mathbb{R}$ and extend $R$ to this set $A$.\\
+
+Since $c$ cannot be compared to any $x \in \mathbb{R}$, we have that $c \nleq x$ and $x \nleq c \; \forall x \in \mathbb{R}$. Thus, $c$ satisfies the definition of a minimal element in $A$, but does not satisfy the definition of the smallest element.\\
+
+Now, let's fix a $y \in \mathbb{R}$ and assume it is a minimal element. Since $\mathbb{R}$ is closed under addition and we have $-1, y \in \mathbb{R}$, this yields $y + (-1) \in \mathbb{R}$. However, we know that $y + (-1) \leq y$. Thus, we have a contradiction and $\mathbb{R}$ has no minimal element under the relation $\leq$. Since the smallest element must also be minimal, $\mathbb{R}$ has no smallest element as well.\\
+
+As a result, $A$ has a unique minimal element $c$ but has no smallest element.
+
+\begin{problem}{2}
+\end{problem}
+
+Suppose that $\inf E < \sup E$ and that $E$ has only one element $b$. Then $\inf E \leq b \leq \sup E$.\\
+
+From the definitions of infimum and supremum and the fact that $E$ contains only one element, we have that $\inf E + \epsilon > b$ and $\sup E - \epsilon < b \; \forall \epsilon > 0$. As a result, $\inf E = b = \sup E$.\\
+
+This is a contradiction, and so if $\inf E < \sup E$, then $E$ must contain at least two elements.\\
+
+Now suppose that $E$ has at least two elements.\\
+
+Choose two elements $a, b \in E$. Since $\mathbb{R}$ is an ordered field and $E \subset \mathbb{R}$, we have that $a \leq b$ or $b \leq a$. Assume $a \leq b$ without loss of generality.\\
+
+Since every element of a set is distinct, $a \neq b$ and we have $a < b$.\\
+
+By definition of $\inf E$, we have that $\inf E \leq E \implies \inf E \leq a$. Similarly, we have $E \leq \sup E \implies b \leq \sup E$.\\
+
+These two statements yield,
+\begin{align*}
+&\inf E \leq a < b \leq \sup E
+\end{align*}
+
+Thus, if $E$ has at least two elements, $\inf E < \sup E$.
+
+\end{document}
