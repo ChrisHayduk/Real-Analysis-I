@@ -7,7 +7,6 @@
 \usepackage{fixltx2e}
 \usepackage[shortlabels]{enumitem}
 \usepackage{mathrsfs}
-
  
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
@@ -53,7 +52,7 @@ As a result, $A$ has a unique minimal element $c$ but has no smallest element.
 
 Suppose that $\inf E < \sup E$ and that $E$ has only one element $b$. Then $\inf E \leq b \leq \sup E$.\\
 
-From the definitions of infimum and supremum and the fact that $E$ contains only one element, we have that $\inf E + \epsilon > b$ and $\sup E - \epsilon < b \; \forall \epsilon > 0$. As a result, $\inf E = b = \sup E$.\\
+From the definitions of infimum and supremum and the fact that $E$ contains only one element, we have that $\inf E + \epsilon > b$ and $\sup E - \epsilon < b \; \forall \epsilon > 0$. Since $\epsilon$ can be made arbitrarily close to 0, we have $\inf E = b = \sup E$.\\
 
 This is a contradiction, and so if $\inf E < \sup E$, then $E$ must contain at least two elements.\\
 
@@ -71,5 +70,28 @@ These two statements yield,
 \end{align*}
 
 Thus, if $E$ has at least two elements, $\inf E < \sup E$.
+
+\begin{problem}{3}
+\end{problem}	
+
+Suppose that a sequence $\left<x_n\right>$ has two distinct limits, $l_1$ and $l_2$.\\
+
+Then $\forall \epsilon > 0, \exists N_1, N_2 \in \mathbb{N}$ such that $n \geq N_1 \implies | x_n - l_1 | < \frac{\epsilon}{2}$ and $n \geq N_2 \implies | x_n - l_2 | < \frac{\epsilon}{2}$.\\
+
+Now, let $N = max\{N_1, N_2\}$ and fix $n \geq N$. Then, by the triangle inequality, we have
+\begin{align*}
+| l_1 - l_2 | \leq | x_n - l_1 | + | x_n - l_2 | < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\end{align*}
+
+Since $\epsilon$ can be made arbitrarily close to 0, the distance between $l_1$ and $l_2$ is arbitrarily close to 0 as well and hence, $l_1 = l_2$.\\
+
+This is a contradiction to our supposition that $l_1$ and $l_2$ are distinct. As a result, a sequence can have at most one limit.
+
+\begin{problem}{4}
+\end{problem}
+
+Suppose that a sequence $\left<x_n\right>$ is Cauchy.\\
+
+That is, $\forall \epsilon > 0, \exists N \in \mathbb{N}$ such that whenever $n, m \geq N, | x_n - x_m | < \epsilon$.
 
 \end{document}
