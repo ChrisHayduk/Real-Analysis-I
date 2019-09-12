@@ -101,9 +101,11 @@ Now take $\epsilon = 1$. Then we have (taking $n \geq N$),
 
 for all $n \geq N$.\\
 
-Let $M = 1 + max\{x_1, x_2, ..., x_N\}$. Then it is clear that M defines an upper bound for every term in $\left<x_n\right>$. Thus, $\left<x_n\right>$ is a bounded sequence and we can apply the Bolzano-Weierstrass theorem. This theorem states that each bounded sequence contains a convergence subsequence.\\
+Let $M = 1 + max\{|x_1|, |x_2|, ..., |x_N|\}$. Then it is clear that $x_k \in [-M, M] \; \forall k$. Thus, $\left<x_n\right>$ is a bounded sequence.\\
 
-Define a subsequence $\left<x_{n_k}\right>$ such that the sequence converges to some limit $l$. Fix $\epsilon$ and define $N_1$ such that whenever $n_k \geq N_1, | x_{n_k} - l | < \frac{\epsilon}{2}$. Now, define an $N_2$ for the parent sequence $\left<x_n\right>$ such that whenever $n, m \geq N_2, | x_n - x_m | < \frac{\epsilon}{2}$.\\
+Define a ``peak'' as $x_n$ such that $x_n \geq x_m \; \forall m \geq n$. If there are finitely many peaks in $\left<x_n\right>$, then it can be shown $\left<x_n\right>$ has a monotone increasing subsequence. If there are infinitely many peaks, $\left<x_n\right>$ has a monotone decreasing subsequence. In both cases, $\exists$ a monotone subsequence $\left<x_{n_k}\right>$. Since $\left<x_n\right>$ constitutes a bounded set of real numbers, we know that it has an inf and sup. Thus, the monotone sequence $\left<x_{n_k}\right>$ must converge to either the inf or sup of the set depending upon whether it is decreasing or increasing, respectively. This sketches a proof for the Bolzano-Weierstrass theorem, which states that every bounded sequence contains a convergent subsequence. Since we know that our sequence $\left<x_{n_k}\right>$ is bounded, we can apply this theorem. \\
+
+Define a subsequence $\left<x_{n_k}\right>$ such that the sequence converges to some limit $l$. Fix $\epsilon > 0$ and define $N_1$ such that whenever $n_k \geq N_1, | x_{n_k} - l | < \frac{\epsilon}{2}$. Now, define an $N_2$ for the parent sequence $\left<x_n\right>$ such that whenever $n, m \geq N_2, | x_n - x_m | < \frac{\epsilon}{2}$.\\
 
 Now take $N = max\{N_1, N_2\}$. It is clear then that we have the following,
 \begin{align*}
