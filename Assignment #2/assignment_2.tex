@@ -92,6 +92,26 @@ This is a contradiction to our supposition that $l_1$ and $l_2$ are distinct. As
 
 Suppose that a sequence $\left<x_n\right>$ is Cauchy.\\
 
-That is, $\forall \epsilon > 0, \exists N \in \mathbb{N}$ such that whenever $n, m \geq N, | x_n - x_m | < \epsilon$.
+That is, $\forall \epsilon > 0, \exists N \in \mathbb{N}$ such that whenever $n, m \geq N, | x_n - x_m | < \epsilon$.\\
+
+Now take $\epsilon = 1$. Then we have (taking $n \geq N$),
+\begin{align*}
+& x_n = | (x_n - x_N) + x_N | \leq | x_n - x_N | + x_N \leq \epsilon + x_N = 1 + x_N
+\end{align*}
+
+for all $n \geq N$.\\
+
+Let $M = 1 + max\{x_1, x_2, ..., x_N\}$. Then it is clear that M defines an upper bound for every term in $\left<x_n\right>$. Thus, $\left<x_n\right>$ is a bounded sequence and we can apply the Bolzano-Weierstrass theorem. This theorem states that each bounded sequence contains a convergence subsequence.\\
+
+Define a subsequence $\left<x_{n_k}\right>$ such that the sequence converges to some limit $l$. Fix $\epsilon$ and define $N_1$ such that whenever $n_k \geq N_1, | x_{n_k} - l | < \frac{\epsilon}{2}$. Now, define an $N_2$ for the parent sequence $\left<x_n\right>$ such that whenever $n, m \geq N_2, | x_n - x_m | < \frac{\epsilon}{2}$.\\
+
+Now take $N = max\{N_1, N_2\}$. It is clear then that we have the following,
+\begin{align*}
+| x_n - l | = | x_n - x_{n_k} + x_{n_k} - l | \leq | x_n - x_{n_k} | + | x_{n_k} - l | < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\end{align*}
+
+whenever $n, n_k \geq N$.\\
+
+This satisfies the definition of a limit and so $\left<x_n\right> \to l$.
 
 \end{document}
