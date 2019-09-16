@@ -43,17 +43,47 @@
 \end{problem}
 
 \begin{enumerate}[i)]
-	\item Let $y_n = \sup\{x_n, x_{n+1}, ...\}$ and $z_n = \inf\{x_n, x_{n+1}, ...\}$.\\
+	\item Let $\ell_1 = \limsup{x_n}$ and $\ell_2 = \liminf{x_n}$. Suppose $\ell_2 > \ell_1$.\\
 	
-	Thus, for every $n, z_n \leq y_n$.\\
+	By the definition of $\limsup$, $\forall \epsilon > 0 \; \exists n_1 \in N$ such that whenever $k \geq n_1$, $x_k < \ell_1 + \epsilon$.\\
 	
-	Furthermore, we have
+	Similarly for $\liminf$, we have $\exists n_2 \in N$ such that whenever $k \geq n_2$, $x_k > \ell_2 - \epsilon$.\\
+	
+	Let $0 < \epsilon < \frac{\ell_2 - \ell_1}{2}$. Thus, we have
 	\begin{align*}
-		&\limsup{x_n} = \inf{y_n} = \inf{\{y_1, y_2, ...\}}\\
-		&\liminf{x_n} = \sup{z_n} = \sup{\{z_1, z_2, ...\}}
+		&\ell_2 - \epsilon > \ell_1 + \epsilon
 	\end{align*}
 	
-	\item 
+	Now, choose $n_1 \in N$ such that whenever $k \geq n_1$, $x_k < \ell_1 + \epsilon$ and $n_2 \in N$ such that whenever $k \geq n_2$, $x_k > \ell_2 - \epsilon$. Let $n = \max{\{n_1, n_2\}}$.\\
+	
+	This yields, $\forall k \geq n$, $\ell_2 - \epsilon < x_k < \ell_1 + \epsilon$.\\
+	
+	However, we know that $\ell_2 - \epsilon > \ell_1 + \epsilon$, a contradiction. Hence, $\ell_2 \leq \ell_1$.
+	
+	\item Suppose $\limsup{x_n} = \liminf{x_n} = \ell$.\\
+	
+	Then $\forall \epsilon > 0, \exists n_1 \in N$ such that whenever $k \geq n_1$, $x_k < \ell + \epsilon$ and $n_2 \in N$ such that whenever $k \geq n_2$, $x_k > \ell - \epsilon$.\\
+	
+	Let $n = \max{\{n_1, n_2\}}$. Then, $\forall k \geq n$, 
+	\begin{align*}
+		&\ell - \epsilon < x_k < \ell + \epsilon\\
+		\implies &| x_k - \ell | < \epsilon
+	\end{align*}
+	
+	This is precisely the definition of a limit, and so $\lim{x_n} = \ell$.\\
+	
+	Now start by supposing $\lim{x_n} = \ell$.\\
+	
+	This implies that $\forall \epsilon > 0, \exists n \in \mathbb{N}$ such that $k \geq n \implies |x_k - \ell| < \epsilon$.\\
+	
+	Thus, we have that
+	\begin{align*}
+	&-\epsilon < x_k - \ell < \epsilon\\
+	\implies &\ell - \epsilon < x_k < \ell + \epsilon
+	\end{align*}
+	
+	As a result, we can see that for every $\epsilon > 0, \exists n$ such that whenever $k \geq n, x_k < \ell + \epsilon$, satisfying the definition $\ell = \limsup{x_k}$. Similarly, for every $\epsilon > 0, \exists n$ such that whenever $k \geq n, \ell - \epsilon < x_k$, satisfying the definition $\ell = \liminf{x_k}$
+
 \end{enumerate}
 
 \begin{problem}{3}
