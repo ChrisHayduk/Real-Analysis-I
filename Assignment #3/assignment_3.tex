@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Assignment 3}
+
+\author{Chris Hayduk}
+\date{September 19, 2019}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+\begin{problem}{2}
+\end{problem}
+
+\begin{enumerate}[i)]
+	\item Let $y_n = \sup\{x_n, x_{n+1}, ...\}$ and $z_n = \inf\{x_n, x_{n+1}, ...\}$.\\
+	
+	Thus, for every $n, z_n \leq y_n$.\\
+	
+	Furthermore, we have
+	\begin{align*}
+		&\limsup{x_n} = \inf{y_n} = \inf{\{y_1, y_2, ...\}}\\
+		&\liminf{x_n} = \sup{z_n} = \sup{\{z_1, z_2, ...\}}
+	\end{align*}
+	
+	\item 
+\end{enumerate}
+
+\begin{problem}{3}
+\end{problem}
+
+The set of rational numbers $\mathbb{Q}$ is neither open nor closed.\\
+
+Any open interval of any size centered around an $x \in \mathbb{Q}$ will contain a $y \in \mathbb{I}$. Since $\mathbb{Q} \cap \mathbb{I} = \emptyset$, there is no $\delta > 0$ such that $(x - \delta, x + \delta) \subset \mathbb{Q}$. Thus, $\mathbb{Q}$ is not open.\\
+
+Now take $\left<x_n\right> = (1 + \frac{1}{n})^n$. This sequence is known to converge to $e$, which is an irrational number. However, since every term in $\left<x_n\right>$ consists of the multiplication of rational numbers and $\mathbb{Q}$ is closed under multiplication, we have a sequence of rational numbers that converges to an irrational number.\\
+
+As a result, $e$ is a point of closure of $\mathbb{Q}$ but is not contained in $\mathbb{Q}$. Thus, $\mathbb{Q} \neq \overline{\mathbb{Q}}$ and $\mathbb{Q}$ is not closed.
+
+\begin{problem}{4}
+\end{problem}
+
+Let $A = (1, 2)$ and $B = (2, 3)$. It is clear from these two intervals that we have $A \cap B = \emptyset$.\\
+
+
+We can see that $A$ and $B$ share a limit point (namely 2). However, both of these sets do not contain this limit point. Since they do not contain that limit point and are disjoint intervals, their intersection is the empty set.\\
+
+The closure of a set $X$ is the collection of points of closure of $X$. We know that $x \in X$ is a point of closure of $X$ if $\forall \delta > 0, (x - \delta, x + \delta) \cap X \neq \emptyset$.\\
+
+It is quite clear from this definition that all interior points of $A$ and $B$ are points of closure for each set. Moreover, we can see that 1 and 2 are points of closure for $A$, while 2 and 3 are points of closure for $B$.\\
+
+To show that 2 is a point of closure for $A$, fix $\delta > 0$. Then we need to check that $(2 - \delta, 2 + \delta) \cap A \neq \emptyset$. We can see that $A = \{a: 1 < a < 2\}$. It is clear that $2 - \delta < 2 < 2 + \delta$.\\
+
+If we assume that $\delta \geq 1$, then $A \; \cap \; (2 - \delta, 2 + \delta) = A$. If $0 < \delta < 1$, $A \; \cap \; (2 - \delta, 2 + \delta) = (2 - \delta, 2)$ Thus, this interval will intersect $A$ for every $\delta > 0$, satisfying the definition for a point of closure.\\
+
+A similar argument holds for 2 being a point of closure of $B$.\\
+
+Since 2 is a point of closure for both $A$ and $B$, we can see that $2 \in \overline{A}, \overline{B}$.\\
+
+Thus, we have that $\overline{A} \cap \overline{B} = \{2\}$.\\
+
+\begin{problem}{5}
+\end{problem}
+
+Let $x$ be an irrational number. Then $x$ can be expressed as a non-terminal, non-repeating decimal.\\
+
+Now construct a sequence $\left<x_n\right>$ from this decimal expansion for $x$, where $x_1$ contains the first term in the decimal expansion of $x$, $x_2$ contains the first two terms, and so on. That is, each $x_k$ is a natural number containing $k$ terms from the decimal expansion of the original $x$.\\
+
+Furthermore, let $m$ be the absolute value of the exponent that $10$ must be raised to in order to put the terms in correspondence with the original decimal expansion. For example, for a decimal 0.0003, we would have $0.0003 = 3\cdot10^{-4}$, which yields $m = |-4| = 4$.\\
+
+Then we see can that $\left<x_n\right> = \frac{x_n}{10^{m+(n-1)}}$.\\
+
+By construction, $\left<x_n\right> \to x$. This convergence means that, $\forall \epsilon > 0, \exists N$ such that if $n \geq N$, then $| x - x_n | < \epsilon$.\\
+
+Now take $\delta > 0$ and construct an open interval around $x$, $(x - \delta, x + \delta)$. In addition, let $X = \{x_k: x_k \in \left<x_n\right>\}$.\\
+
+Let $\epsilon = \delta$. Then $\exists N$ such that if $n \geq N$, then
+\begin{align*}
+&| x - x_n | < \epsilon = \delta\\
+\implies &-\delta < x - x_n < \delta\\
+\implies &-x - \delta < - x_n < -x + \delta\\
+\implies &x - \delta < x_n < x + \delta
+\end{align*} 
+
+Thus, when $n \geq N$, $x_n \in (x - \delta, x + \delta)$. As a result, $x$ is point of closure for the set $X$, which is a set of rational numbers. Hence, $x$ is a point of closure for $\mathbb{Q}$. Since $x$ was defined as an arbitrary irrational number, this holds for any irrational.\\
+
+Now, let $y$ be an arbitrary rational number and let $\delta > 0$. Construct an open interval around $y$, $(y - \delta, y + \delta)$. By the Axiom of Archimedes, $\exists N \in \mathbb{N}$ such that $\frac{1}{N} < \delta$.\\
+
+It is clear that $y - \delta < y - \frac{1}{N} < y < y + \delta$. Hence, $(y - \frac{1}{N}) \in (y - \delta, y + \delta)$.\\
+
+Since $\mathbb{Q}$ is closed under addition, we have that $(y - \frac{1}{N}) \in \mathbb{Q}$. Thus, $\mathbb{Q} \cap (y - \delta, y + \delta) \neq \emptyset$.\\
+
+Our $\delta > 0$ was chosen to be arbitrary, so this holds for any $\delta$. As a result, $y$ is a point of closure for $\mathbb{Q}$ and, by extension, every rational is a point of closure for $\mathbb{Q}$.\\
+
+Since both the rationals and irrationals are points of closure for $\mathbb{Q}$, we can see that $\overline{\mathbb{Q}} = \mathbb{Q} \cup \mathbb{I}$. This is precisely the definition of $\mathbb{R}$, and so $\overline{\mathbb{Q}} = \mathbb{R}$.
+\end{document}
