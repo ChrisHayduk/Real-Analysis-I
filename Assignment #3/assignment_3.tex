@@ -39,6 +39,24 @@
 \begin{problem}{1}
 \end{problem}
 
+Assume $\ell = \inf_{n} \sup_{k \geq n} x_k$.\\
+
+Define $y_n = \sup_{k \geq n} x_k = \sup \{x_n, x_{n+1}, ...\}$\\
+
+It is clear that $\forall n, y_n \geq y_{n+1}$. This holds because $x_n$ is included in the set of points for $y_n$, but not for $y_{n+1}$. Hence $y_n \to \inf y_n = \ell$ as $n \to \infty$.\\
+
+Thus, given $\epsilon > 0$, we can find an $n_1$ such that $y_{n_1} < \ell + \epsilon$. That is, $x_k < \ell + \epsilon \; \forall k \geq n_1$, satisfying condition (i).\\
+
+Now let $\epsilon$ and $n$ be given. Since $y_n \to \inf y_n = \ell$ as $n \to \infty$, then $y_n > \ell - \epsilon$. So $\exists k \geq n$ such that $x_k > \ell - \epsilon$, satisfying condition (ii).\\
+
+Now suppose conditions (i) and (ii) hold.\\
+
+Condition (i) states that $\forall \epsilon > 0, \exists n \in \mathbb{N}$ such that whenever $k \geq n$, $x_k < \ell + \epsilon$. This implies that for every $\epsilon > 0$, there exists an $n$ such that $\sup_{k \geq n} x_k \leq \ell + \epsilon$.\\
+
+Condition (ii) states that $\forall \epsilon > 0$ and every $n \in \mathbb{N}$, there exists $k \geq n$ for which $x_k > \ell - \epsilon$. Thus, for any $\epsilon$ and $n$, $\sup_{k \geq n} x_k \geq \ell - \epsilon$.\\
+
+Since $\ell - \epsilon \leq \sup_{k \geq n} x_k \leq \ell + \epsilon$ given an $n$ of sufficient size, we see that $\ell = \inf_{n} \sup_{k \geq n} x_k$. 
+
 \begin{problem}{2}
 \end{problem}
 
@@ -103,11 +121,11 @@ As a result, $e$ is a point of closure of $\mathbb{Q}$ but is not contained in $
 Let $A = (1, 2)$ and $B = (2, 3)$. It is clear from these two intervals that we have $A \cap B = \emptyset$.\\
 
 
-We can see that $A$ and $B$ share a limit point (namely 2). However, both of these sets do not contain this limit point. Since they do not contain that limit point and are disjoint intervals, their intersection is the empty set.\\
+We can see that $A$ and $B$ share a point of closure (namely 2). However, both of these sets do not contain this point of closure. Since they do not contain that point and are disjoint intervals, their intersection is the empty set.\\
 
 The closure of a set $X$ is the collection of points of closure of $X$. We know that $x \in X$ is a point of closure of $X$ if $\forall \delta > 0, (x - \delta, x + \delta) \cap X \neq \emptyset$.\\
 
-It is quite clear from this definition that all interior points of $A$ and $B$ are points of closure for each set. Moreover, we can see that 1 and 2 are points of closure for $A$, while 2 and 3 are points of closure for $B$.\\
+It is quite clear from this definition that all points contained in $A$ and $B$ are points of closure for each set. Moreover, we can see that 1 and 2 are points of closure for $A$, while 2 and 3 are points of closure for $B$.\\
 
 To show that 2 is a point of closure for $A$, fix $\delta > 0$. Then we need to check that $(2 - \delta, 2 + \delta) \cap A \neq \emptyset$. We can see that $A = \{a: 1 < a < 2\}$. It is clear that $2 - \delta < 2 < 2 + \delta$.\\
 
@@ -144,13 +162,11 @@ Let $\epsilon = \delta$. Then $\exists N$ such that if $n \geq N$, then
 
 Thus, when $n \geq N$, $x_n \in (x - \delta, x + \delta)$. As a result, $x$ is point of closure for the set $X$, which is a set of rational numbers. Hence, $x$ is a point of closure for $\mathbb{Q}$. Since $x$ was defined as an arbitrary irrational number, this holds for any irrational.\\
 
-Now, let $y$ be an arbitrary rational number and let $\delta > 0$. Construct an open interval around $y$, $(y - \delta, y + \delta)$. By the Axiom of Archimedes, $\exists N \in \mathbb{N}$ such that $\frac{1}{N} < \delta$.\\
+Now, let $y$ be an arbitrary rational number and let $\delta > 0$. Construct an open interval around $y$, $(y - \delta, y + \delta)$.\\
 
-It is clear that $y - \delta < y - \frac{1}{N} < y < y + \delta$. Hence, $(y - \frac{1}{N}) \in (y - \delta, y + \delta)$.\\
+It is clear that $y - \delta < y < y < y + \delta$. Hence, $y \in (y - \delta, y + \delta)$. Thus, $\mathbb{Q} \cap (y - \delta, y + \delta) \neq \emptyset$.\\
 
-Since $\mathbb{Q}$ is closed under addition, we have that $(y - \frac{1}{N}) \in \mathbb{Q}$. Thus, $\mathbb{Q} \cap (y - \delta, y + \delta) \neq \emptyset$.\\
-
-Our $\delta > 0$ was chosen to be arbitrary, so this holds for any $\delta$. As a result, $y$ is a point of closure for $\mathbb{Q}$ and, by extension, every rational is a point of closure for $\mathbb{Q}$.\\
+As a result, $y$ is a point of closure for $\mathbb{Q}$ and, by extension, every rational is a point of closure for $\mathbb{Q}$.\\
 
 Since both the rationals and irrationals are points of closure for $\mathbb{Q}$, we can see that $\overline{\mathbb{Q}} = \mathbb{Q} \cup \mathbb{I}$. This is precisely the definition of $\mathbb{R}$, and so $\overline{\mathbb{Q}} = \mathbb{R}$.
 \end{document}
