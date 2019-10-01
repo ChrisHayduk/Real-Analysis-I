@@ -81,4 +81,42 @@ As a result, if there is not at least one bounded $F_n$, we have that $\cap F_n 
 \begin{problem}{2}
 \end{problem}
 
+Let $A = \{x \in [a, b]: f(x) \leq \gamma\}$. We have that $a \in A$ and $A$ is bounded above by $b$. As a result, the supremum of $A$ exists. Let $c = \sup A$.\\
+
+We claim that $f(c) = \gamma$.\\
+
+We know that $f$ is continuous, so choose some $\epsilon > 0$. Then $\exists \delta > 0$ such that $|f(x) - f(c)| < \epsilon$ whenever $|x - c| < \delta$.\\
+
+This yields,
+\begin{align*}
+f(x) - \epsilon < f(c) < f(x) + \epsilon
+\end{align*}
+
+Since $c$ is the supremum of the set, there exists $c' \in (c - \delta, c]$ such that
+\begin{align*}
+&f(c) + \epsilon < f(c')\\
+\implies &f(c) < f(c') + \epsilon \leq \gamma + \epsilon
+\end{align*}
+
+In addition, there exists $c'' \in (c, c + \delta)$ such that 
+\begin{align*}
+&f(c'') < f(c) + \epsilon\\
+\implies &f(c) > f(c'') - \epsilon \geq \gamma - \epsilon
+\end{align*}
+
+Combining these two inequalities yields, 
+\begin{align*}
+\gamma - \epsilon \leq f(c) \leq \gamma + \epsilon
+\end{align*}
+
+Since $\epsilon > 0$ is arbitrary, $f(c) = \gamma$.
+
+\begin{problem}{3}
+\end{problem}
+
+Let $g(x) = f(x) \; \forall x \in F$.
+
+\begin{problem}{4}
+\end{problem}
+
 \end{document}
