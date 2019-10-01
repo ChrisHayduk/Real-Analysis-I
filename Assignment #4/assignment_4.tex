@@ -122,12 +122,12 @@ We already know that $g$ is continuous on $F$, so it suffices to show that $g$ i
 
 Let $(x_1, x_2)$ be one of the open intervals whose union equals $\tilde{F}$. Since $g$ is linear, we have that $x \in (x_1, x_2) \implies g(x) = ax + b$ for some constants $a, b \in \mathbb{R}$. Assume $a \neq 0$.\\
 
-Let $\epsilon = \delta|a|$. Then there is a $\delta > 0$ such that for $x, y \in (x_1, x_2)$,
+Fix $\epsilon > 0$ and choose $\delta = \frac{\epsilon}{|a|}$. Then for  $\forall y \in (x_1, x_2)$,
 \begin{align*}
 |x - y| < \delta &\implies |g(x) - g(y)| < \epsilon\\
 &\implies |ax + b - (ay + b)| < \epsilon\\
 &\implies |a(x - y)| < \epsilon\\
-&\implies |x - y| < \frac{\epsilon}{|a|} = \frac{\delta|a|}{|a|} = \delta
+&\implies |x - y| < \frac{\epsilon}{|a|} = \delta
 \end{align*}
 
 Thus, $g(x)$ is continuous on $(x_1, x_2)$ when $a \neq 0$.\\
