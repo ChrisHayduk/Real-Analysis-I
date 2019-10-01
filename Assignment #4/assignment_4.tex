@@ -109,14 +109,66 @@ Combining these two inequalities yields,
 \gamma - \epsilon \leq f(c) \leq \gamma + \epsilon
 \end{align*}
 
-Since $\epsilon > 0$ is arbitrary, $f(c) = \gamma$.
+Since $\epsilon > 0$ can be arbitrarily small, $f(c) = \gamma$.
 
 \begin{problem}{3}
 \end{problem}
 
-Let $g(x) = f(x) \; \forall x \in F$.
+Firstly, let $g(x) = f(x) \; \forall x \in F$.\\
+
+Since $F$ is closed, we know that $\tilde{F}$ is open. By Proposition 8, $\tilde{F}$ is the union of a countable collection of disjoint open intervals. Define $g$ on $\tilde{F}$ to be linear on these open intervals. Then $g$ is defined on all of $\mathbb{R}$.\\
+
+We already know that $g$ is continuous on $F$, so it suffices to show that $g$ is continuous on $\tilde{F}$.\\
+
+Let $(x_1, x_2)$ be one of the open intervals whose union equals $\tilde{F}$. Since $g$ is linear, we have that $x \in (x_1, x_2) \implies g(x) = ax + b$ for some constants $a, b \in \mathbb{R}$. Assume $a \neq 0$.\\
+
+Let $\epsilon = \delta|a|$. Then there is a $\delta > 0$ such that for $x, y \in (x_1, x_2)$,
+\begin{align*}
+|x - y| < \delta &\implies |g(x) - g(y)| < \epsilon\\
+&\implies |ax + b - (ay + b)| < \epsilon\\
+&\implies |a(x - y)| < \epsilon\\
+&\implies |x - y| < \frac{\epsilon}{|a|} = \frac{\delta|a|}{|a|} = \delta
+\end{align*}
+
+Thus, $g(x)$ is continuous on $(x_1, x_2)$ when $a \neq 0$.\\
+
+Moreover, if $a = 0$, then $g(x) = b \; \forall x \in (x_1, x_2)$. Thus, $|g(x) - g(y)| = 0 < \epsilon \; \forall x, y \in (x_1, x_2)$ and $\forall \epsilon > 0$. Hence, $g(x)$ is continuous on $(x_1, x_2)$ for any choice of $a, b \in \mathbb{R}$.\\
+
+Since $g(x)$ is continuous for any choice of $a, b \in \mathbb{R}$, we can choose $a, b$ such that $g(x_1) = f(x_1)$ and $g(x_2) = f(x_2)$. (We know that $x_1, x_2 \in F$ by the disjoint property of the open intervals). This yields $a = \frac{f(x_1) - f(x_2)}{x_1 - x_2}$ and $b = f(x_1) - x_1\frac{f(x_1) - f(x_2)}{x_1 - x_2}$\\
+
+By this construction, $g(x)$ is continuous on $[x_1, x_2]$ and $g(x_1) = f(x_1), g(x_2) = f(x_2)$.\\
+
+Since $(x_1, x_2)$ is an arbitrary open interval from the collection of countable open intervals whose union equals $\tilde{F}$, we have that $g(x)$ is continuous on all such intervals with the property that $g(x_1) = f(x_1), g(x_2) = f(x_2)$ for the endpoints of said intervals.\\
+
+We know that $g(x)$ is continuous at all interior points of $F$ and $\tilde{F}$. Thus, we must show that $g(x)$ is continuous at the boundary points of $F$, which are precisely the boundary points of $\tilde{F}$. Namely, the endpoints of each open interval.\\
+
+Choose a boundary point $x$ and an $\epsilon > 0$. Since $g(x)$ is continuous in $F$ and $x \in F$, there exists a $\delta_1 > 0$ such that $|x - y| < \delta \implies |g(x) - g(y)| < \epsilon \; \forall y \in F$. Furthermore, by the construction above of $g(x)$ on $\tilde{F}$, there exists a $\delta_2 > 0$ such that $|x - y| < \delta_2 \implies |g(x) - g(y)| < \epsilon \; \forall y \in \tilde{F}$. Take $\delta = \min\{\delta_1, \delta_2\}$, and we can clearly see that $g(x)$ is continuous at $x$. Since $x$ is an arbitrary boundary point of $F$, $g(x)$ is continuous at all such boundary points (ie. the endpoints of each open interval comprising $\tilde{F}$).\\
+
+Hence, we have that $g(x)$ is continuous at all points in $F$ and $\tilde{F}$. Thus, $g$ is continuous on $F \cup \tilde{F} = \mathbb{R}$.
 
 \begin{problem}{4}
 \end{problem}
+
+Since $f$ is continuous on $[a, b]$ (a closed and bounded subset of $\mathbb{R}$), we have that $f$ is uniformly continuous.\\
+
+Let $\epsilon > 0$. Then there exists a $\delta > 0$ such that $|f(x) - f(y)| < \frac{\epsilon}{2}$ for all $x, y \in [a, b]$.\\
+
+Choose $N \in \mathbb{N}$ such that $\frac{b-a}{N} < \delta$ and let $x_i = a + i\frac{b-a}{N}$. Furthermore, construct $\varphi$ similarly to how we constructed $g$ in the above problem: let $\varphi$ be linear on each $[x_i, x_{i+1}]$ with the property that $\varphi(x_i) = f(x_i) \; \forall i$.\\
+
+Now let $x \in [a, b]$. Then $\exists i$ such that $x \in [x_i, x_{i+1}]$. In addition, assume $f(x_i) \leq f(x_{i+1})$, which implies that $\varphi(x_i) \leq \varphi(x) \leq \varphi(x_{i+1})$ by properties of linear functions. Then,
+\begin{align*}
+|\varphi(x) - f(x)| &\leq |\varphi(x) - \varphi(x_i)| + |\varphi(x_i) - f(x)|\\
+&\leq |\varphi(x_{i+1}) - \varphi(x_i)| + |f(x_i) - f(x)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\end{align*}
+
+If $f(x_i) > f(x_{i+1})$, we have that $\varphi(x_i) > \varphi(x) > \varphi(x_{i+1})$, yielding,
+\begin{align*}
+|\varphi(x) - f(x)| &< |\varphi(x) - \varphi(x_{i+1})| + |\varphi(x_{i+1}) - f(x)|\\
+&< |\varphi(x_i) - \varphi(x_{i+1})| + |f(x_{i+1}) - f(x)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\end{align*}
+
+Thus, the inequality holds regardless of the inequality relationship between endpoints.\\
+
+Since $x \in [a, b]$ was arbitrary, we have that $\varphi: [a,b] \to \mathbb{R}$ is a polygonal function with the property that $|f(x) - \varphi(x)| < \epsilon \; \forall x \in [a, b]$.
 
 \end{document}
