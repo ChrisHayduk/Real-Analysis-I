@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Assignment 4}
+
+\author{Chris Hayduk}
+\date{October 3, 2019}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Let $<F_n>$ be a sequence of non-empty, closed sets of real numbers with the property that $F_{n+1} \subset F_{n}$ for all $n \in \mathbb{N}$. Furthermore, assume there exists an $m$ such that $F_m$ is bounded.\\
+
+Since $F_m$ is bounded we know that $\exists c \in \mathbb{R}$ such that $\forall x \in F_m, |x| \leq c$. Now examine $F_{m+1}$. We know that $F_{m+1} \neq \emptyset$ and $F_{m+1} \subset F_{m}$. That is, $x \in F_{m+1} \implies x \in F_{m}$. As a result, every $x \in F_{m+1}$ is bounded by the same $c$.\\
+
+This same line of reasoning applies for any $n \geq m$ since we have that $F_m \supset F_{m+1} \supset \cdots$ and $F_n \neq \emptyset \; \forall n$. Thus, we now have a subsequence of the original sequence which consists solely of closed, bounded, nonempty subsets.\\
+
+We know that $\forall k \geq m, F_k$ is a non-empty, closed, and bounded set. As a result each $F_k$ must contain its infimum, which we can denote by $x_k$.\\
+
+We can see that $x_k \leq c$ and $x_k \leq x_{k+1}$. Thus, $<x_k>$ is a monotonically increasing, bounded sequence. By the monotone convergence theorem, this sequence converges to a limit point $x$.\\
+
+Since the sets are nested, for any k, $x_j \in F_k \; \forall j \geq k$. Furthermore, $F_k$ is closed, so we have $x \in F_k$. This applies for any $k \geq m$, so $x \in \bigcap^\infty_{i=m} F_i$.\\
+
+Now that we have considered the subsequence of non-empty, closed, and bounded sets let us incorporate the finite collection of unbounded sets $F_1, \cdots, F_{m-1}$.\\
+
+We know that $F_m \subset F_{m-1} \subset \cdots F_{1}$. Thus, $F_{m} \subset F_n \; \forall n < m$.\\
+
+As a result, we clearly have $\bigcap^{m-1}_{i=0} F_i = F_m$.\\
+
+Now if we combine the two intersections, we have
+\begin{align*}
+&\bigcap^\infty_{i=0} F_i = \bigcap^{m-1}_{j=0} F_j \; \cap \; \bigcap^\infty_{k=m} F_k\\
+\implies &(F_1 \cap F_2 \cap \cdots \cap F_{m-1}) \cap (F_{m} \cap F_{m+1} \cap \cdots)\\
+\implies &F_{m} \cap (F_{m} \cap F_{m+1} \cap \cdots)\\
+\implies &(F_m \cap F_m) \cap F_{m+1} \cap \cdots\\
+\implies &F_m \cap F_{m+1} \cap \cdots = \bigcap^\infty_{k=m} F_k
+\end{align*}
+
+Since we know that $x \in \bigcap^\infty_{i=m} F_i$, the derivation above implies that $x \in \bigcap^\infty_{i=0} F_i \neq \emptyset$ as well. Thus, the intersection of a nested sequence of non-empty, closed sets of real numbers is non-empty if one of the sets is bounded.\\
+
+Now let $F_n = \{x \in \mathbb{R}: x \geq n\} = [n, \infty)$. Clearly each $F_n \subset \mathbb{R}$ is unbounded and closed.\\ 
+
+Furthermore, we have that $F_{n+1} = \{x \in \mathbb{R}: x \geq n+1\} = [n+1, \infty)$. Then we can see that $F_{n+1} \subset F_n$ since $[n+1, \infty) \subset [n, \infty)$.\\
+
+Now assume $\cap F_n \neq \emptyset$ and let $x \in \cap F_n$. Then $x \in F_n \; \forall n$. Since $F_n \subset \mathbb{R}$, we have that $x \in \mathbb{R}$. Thus, by the Axiom of Archimedes, $\exists k \in \mathbb{N}$ such that $k > x$.\\
+
+Hence, by the definition of $F_n$, we have that $x \not\in F_k$. However, this contradicts the assumption that $x \in \cap F_n$ and, by extension, that $\cap F_n \neq \emptyset$.\\
+
+As a result, if there is not at least one bounded $F_n$, we have that $\cap F_n = \emptyset$.
+
+\begin{problem}{2}
+\end{problem}
+
+\end{document}
