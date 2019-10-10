@@ -1,0 +1,145 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Assignment 5}
+
+\author{Chris Hayduk}
+\date{October 10, 2019}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Suppose $f: \mathbb{R} \to \mathbb{R}$. If $f$ is continuous at a point $x \in \mathbb{R}$, then $\forall \epsilon > 0, \; \exists \delta > 0$ such that $|x -y| < \delta \implies |f(x) - f(y)| < \epsilon$.\\
+
+Thus, for a given $\epsilon$, the region of continuity around $x$ is $(x - \delta, x + \delta)$.\\
+
+For each $x \in \mathbb{R}$ where $f$ is continuous, let $\epsilon = \frac{1}{n} \; \forall n \in \mathbb{N}$. Then the $\delta$ neighborhoods around each $x$ will be shrinking in size as well.\\
+
+Let $x_i$ be the ith continuous point of $f$ and let $O_n = \bigcup\limits_{i=1}^{\infty} (x_i - \delta, x_i + \delta)$ for the $\delta$ corresponding to $\epsilon = \frac{1}{n}$. Then, each $O_n$ is a union of open sets and thus is open as well.\\
+
+It is clear from the construction of each $\delta$ neighborhood that, as $n \to \infty$, we have $\epsilon, \delta \to 0$.\\
+
+Thus, if we take a specific point of continuity $x_k$, we have that for some $\delta$, $x_k \in (x_k - \delta, x_k + \delta)$ for all choices of $\epsilon$ by definition. However, we can make $\delta$ arbitrarily small through our choice of $\epsilon$, so for any $x_k \pm c$, we can choose an $epsilon$ such that $x_k \pm c \not\in (x_k - \delta, x_k + \delta)$. Hence, we have that $x_k$ is in every $O_n$, but no other point contained in all of its delta neighborhoods is.\\
+
+As a result, we have that $A = \bigcap\limits_{i=1}^{\infty} O_i$ is the set of all points at which $f$ is continuous.\\
+
+Now, from the above, we have defined each $O_n$ as a countable union of open sets, so each $O_n$ is open. In addition, there are a countable number of sets $O_n$. Thus, $A$ is a countable intersection of open sets and, hence, $A$ is $G_{\delta}$.
+
+\begin{problem}{2}
+\end{problem}
+
+We have that $m^*A = \inf_{A \; \subset \; \cup I_n} \sum l(I_n)$.\\
+
+Let $B = \{I_n: n \in \mathbb{N}\}$ be the open cover consisting of open intervals that satisfies $\inf_{A \; \subset \; \cup I_n} \sum l(I_n)$.\\
+
+Since $B$ is a collection of open sets, it is an open cover for itself. Moreover, for an open set $I_k \in B$, let $I_{k_n}$ be an open cover for $I_k$ composed of open intervals. By the triangle inequality, we have that $l(I_k) \leq \sum l(I_{k_n})$.\\
+
+Now let $O = \cup I_n$ such that $I_n \in B$. Since $B$ is an open cover for $A$, we have that $A \subset O$. In addition, we have, 
+\begin{align*}
+m^*O &= \sum l(I_n), \; I_n \in B\\
+&= m^*A
+\end{align*}
+
+Hence, we can clearly see that $m^*O \leq m^*A + \epsilon$ for any choice of $\epsilon > 0$.\\
+
+Now let $G = \cap \mathscr{C}$, where $\mathscr{C}$ is the collection of all open covers for $A$ consisting solely of open intervals. Then $G$ is the smallest such open cover for $A$ and, as a result, $A \subset G$. In addition, since each set contained in $\mathscr{C}$ is open, we have that $G$ is a $G_{\delta}$ set.\\
+
+Since $G$ is the smallest open cover consisting of intervals for $A$, and $G$ is an open set consisting of open intervals, we have that $m^*G = l(G)$ and,
+\begin{align*}
+m^*A &= \inf_{A \; \subset \; \cup I_n} \sum l(I_n)\\
+&= l(G)\\
+&= m^*G
+\end{align*}
+
+\begin{problem}{3}
+\end{problem}
+
+\begin{enumerate}[a)]
+
+\item Let $A$ be measurable and let $y \in \mathbb{R}$. Assume $A + y$ is also measurable. Then,
+\begin{align*}
+m^*A &= \inf_{A \; \subset \; \cup I_n} \sum l(I_n)\\
+&= \inf \sum l(a_{n}, b_{n})\\
+&= \inf \sum (b_{n} - a_{n})
+\end{align*}
+
+If we take $A + y$, we can also shift each $I_n$ by $y$, preserving the status of $\cup I_n$ as an open cover for $A + y$. This is true because, if $x \in A$, $x$ is in some $I_k = (a_k, b_k) \subset \cup I_n$. Hence, $a_k < x < b_k$. This implies that $a_k + y < x + y < b_k + y$ and thus $x \in (a_k + y, b_k + y)$. As a result, we have,
+\begin{align*}
+m^*(A+y) &= \inf_{A \; \subset \; \cup I_n + y} \sum l(I_n + y)\\
+&= \inf \sum l(a_{n_k} + y, b_{n_k} + y)\\
+&= \inf \sum (b_{n_k} + y - a_{n_k} - y)\\
+&= \inf \sum (b_{n_k} - a_{n_k})
+\end{align*}
+
+Thus, outer measure is translation invariant.
+
+\item Let $E$ be a measurable set, let $y \in \mathbb{R}$, and let $A$ be any set. Since $E$ is measurable, we have
+\begin{align*}
+m^*(A) = m^*(A \cap E) + m^*(A \cap \tilde{E})\\
+\end{align*}
+
+In addition, since $m^*$ is translation invariant, this yields,
+\begin{align*}
+m^*(A) = m^*(A-y) &= m^*((A-y) \cap E) + m^*((A - y) \cap \tilde{E})\\
+&= m^*(((A-y) \cap E) + y) + m^*(((A - y) \cap \tilde{E}) + y)\\
+&= m^*(A \cap (E+y)) + m^*(A \cap (\tilde{E} + y))\\
+&= m^*(A \cap (E+y)) + m^*(A \cap (\widetilde{E + y}))
+\end{align*}
+
+Thus, $E + y$ satisfies the definition of measurability and hence is measurable.
+
+\end{enumerate}
+
+\begin{problem}{4}
+\end{problem}
+
+Suppose $m^*A = 0$ and $B$ is measurable. Let $I_{n_A}$ be an open cover consisting of open intervals for $A$ and $I_{n_B}$ be the same for $B$. Then,
+
+\begin{align*}
+m^*(A \cup B) &= \inf \sum l(I_n)\\
+&= \inf \sum l((I_{n_A} \cup I_{n_B}))\\
+&= \inf \sum [l(I_{n_B}) + l(I_{n_A} \setminus I_{n_B})]\\
+&= m^*(B) - m^*(A \setminus B)
+\end{align*}
+
+Removing elements from $A$ will only introduce the possibility of smaller open covers for the new set $A \setminus B$. Thus, $m^*(A \setminus B) \leq m^*(A) = 0$. Furthermore, we know that outer measure is non-negative, so $m^*(A \setminus B) = 0$.\\
+
+Thus, we have,
+\begin{align*}
+m^*(A \cup B) &= m^*(B) - m^*(A \setminus B)\\
+&= m^*(B) - 0 = m^*(B)
+\end{align*}
+
+Thus, if $m^*A = 0$, then $m^*(A \cup B) = m^*B$.
+
+\end{document}
