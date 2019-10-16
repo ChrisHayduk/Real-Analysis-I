@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Proof from Notes}
+
+\author{Chris Hayduk}
+\date{October 15, 2019}
+
+\maketitle
+
+\begin{problem}{1} Prove the number of equivalence classes for the relation $x \sim y$ if $x - y \in \mathbb{Q}$.
+\end{problem}
+
+Suppose $x, y \in \mathbb{Q} \cap [0, 1)$. Then $\exists a, b, m, n \in \mathbb{Z}$ such that,
+\begin{align*}
+x &= \frac{a}{b}\\
+y &= \frac{m}{n}
+\end{align*}
+
+Thus, we have,
+\begin{align*}
+x - y &= \frac{a}{b} - \frac{m}{n}\\
+&= \frac{an}{bn} - \frac{mb}{bn}\\
+&= \frac{an - mb}{bn}
+\end{align*}
+
+We know that the integers are closed under multiplication and addition, so $(an - mb), bn \in \mathbb{Z}$. Thus, $x - y \in \mathbb{Q}$.\\
+
+Now suppose $x \in \mathbb{Q} \cap [0, 1)$ and $y \in \mathbb{I} \cap [0, 1)$.
+
+\end{document}
