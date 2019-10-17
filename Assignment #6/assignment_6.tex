@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Assignment 6}
+
+\author{Chris Hayduk}
+\date{October 17, 2019}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Let $A = \mathbb{Q} \cap [0, 1]$ and let ${I_n}$ be a finite collection of open intervals that cover $A$.\\
+
+Fix $x \in [0, 1]$ and suppose $x \not\in \cup I_n$. Since $I_n$ is a cover for $A = \mathbb{Q} \cap [0, 1]$, we have that $x \in \mathbb{I} \cap [0, 1]$.\\
+
+We know that between any two rational numbers, there exists an irrational number. Thus, there are intervals contained in ${I_n}$ which have elements arbitrarily close to $x$. Thus, the only way for $x$ to not be included in $\cup I_n$ is for it to be the endpoint of one or more of the intervals. That is, the intervals would be of the structure $(a, x)$ or $(x, b)$ for some $a, b \in \mathbb{R}$.\\
+
+Since there are only finitely many open intervals in the collection ${I_n}$, there must be finitely many numbers $x$. Let us construct a collection ${x_n}$ where each ${x} \in {x_n}$ is a singleton set containing one such number $x$.\\
+
+Now let $B = \left(\bigcup_{n=1}^{N} I_n \right) \cup \left(\bigcup_{k=1}^{M} x_k \right)$ where $N$ represents the number of open intervals in ${I_n}$ and $M$ represents the number of $x$ values such that $x \in \mathbb{I} \cap [0, 1]$ and $x \not\in \cup I_n$. We can see that $B$ covers the entire interval $[0, 1]$. That is, $[0, 1] \subset B$. Thus, $mB \geq 1$.\\
+
+We can see that each set ${x_k}$ is disjoint from all other ${x_n}$, as well as from each interval in ${I_n}$. Thus,
+\begin{align*}
+mB &= m\left(\bigcup_{n=1}^{N} I_n \cup \bigcup_{k=1}^{M} x_k \right)\\
+&= m\left(\bigcup_{n=1}^{N} I_n \right) +  m\left(\bigcup_{k=1}^{M} x_k \right)\\
+&= m\left(\bigcup_{n=1}^{N} I_n \right) +  m(x_1) + m(x_2) + \cdots + m(x_M)\\
+&= m\left(\bigcup_{n=1}^{N} I_n \right) + 0 + 0 + \cdots + 0\\
+&= m\left(\bigcup_{n=1}^{N} I_n \right) \geq 1
+\end{align*}
+
+Thus, by Proposition 2 in Chapter 3 of the textbook, we have that,
+\begin{align*}
+1 \leq m\left(\bigcup_{n=1}^{N} I_n \right) \leq \sum m(I_n)
+\end{align*}
+
+Since $m(I) = \ell(I)$ for any interval $I$, we can see that,
+\begin{align*}
+\sum m(I_n) = \sum \ell(I_n) \geq 1
+\end{align*}
+
+\begin{problem}{2}
+\end{problem}
+
+We can see that $E_1 \cup E_2 = E_1 \cup (E_2 \setminus E_1)$, with $E_1$ and $E_2 \setminus E_1$ disjoint. Thus,
+\begin{align*}
+m(E_1 \cup E_2) + m(E_1 \cap E_2) &= m(E_1 \cup (E_2 \setminus E_1)) + m(E_1 \cap E_2)\\
+&= m(E_1) + m(E_2 \setminus E_1) + m(E_1 \cap E_2)
+\end{align*}
+
+In addition, we have that $E_2 \setminus E_1$ and $E_1 \cap E_2$ are disjoint sets. Thus, $m((E_2 \setminus E_1) \cup (E_1 \cap E_2)) = m(E_2 \setminus E_1) + m(E_1 \cap E_2)$. Hence,
+\begin{align*}
+m(E_1) + m(E_2 \setminus E_1) + m(E_1 \cap E_2) &= m(E_1) + m((E_2 \setminus E_1) \cup (E_1 \cap E_2))\\
+&= m(E_1) + m((E_2 \setminus E_1) \cup (E_2 \setminus \tilde{E_1}))\\
+&= m(E_1) + m(E_2)
+\end{align*}
+\begin{problem}{3}
+\end{problem}
+
+Let $E_n = [n, \infty)$. We know from Lemma 11 in Chapter 3 of the textbook that $E_n$ is measurable for each $n$. In addition, we have that the sequence $<E_n>$ is a decreasing sequence. That is, $E_{n+1} \subset E_n$. This clearly follows from the definition of each $E_n$. Writing out this definition, we can easily see that $[n+1, \infty) \subset [n, \infty)$. Thus, $<E_n>$ is a decreasing sequence of measurable sets.\\
+
+Now assume $\cap E_n \neq \emptyset$ and let $x \in \cap E_n$. This implies that $x \in [n, \infty)$ for every $n \in \mathbb{N}$. However, by the Axiom of Archimedes, $\exists n_1 \in \mathbb{N}$ such that $x < n_1$. Thus, $x \not\in E_{n_1}$. This contradicts the assumption that $\cap E_n$ is non-empty, so we have that $\cap E_n = \emptyset$.\\
+
+Now we need to show that $mE_n = \infty$ for every $n$. Fix $n \in \mathbb{N}$. We can separate $E_n$ into a countable union of pairwise disjoint intervals. That is, $E_n = [n, \infty) = [n, n+1) \cup [n+1, n+2) \cdots$.\\
+
+By Proposition 13, we have that $m([n, n+1) \cup [n+1, n+2) \cdots) = m([n, n+1)) + m([n+1, n+2)) + \cdots$. Thus,
+\begin{align*}
+mE_n = m([n, \infty)) &= m([n, n+1) \cup [n+1, n+2) \cdots)\\
+&= m\left(\bigcup_{k=0}^{\infty} [n+k, n+k+1)\right)\\
+&= \sum_{k=0}^{\infty} m\left([n+k, n+k+1)\right)\\
+&=  \sum_{k=0}^{\infty} 1 = \infty
+\end{align*}
+
+Since $n$ was chosen to be arbitrary, this holds for each $E_n$.\\
+
+Hence, we have that $<E_n>$ is a decreasing sequence of measurable sets with $\cap E_n = \emptyset$ and $mE_n = \infty$ for every $n$.
+
+\end{document}
