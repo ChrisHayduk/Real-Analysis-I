@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.28)  24 OCT 2019 03:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.28)  24 OCT 2019 11:54
 entering extended mode
 **./assignment_7.tex
 (assignment_7.tex
@@ -476,37 +476,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
 [1
 
-{C:/Users/Chris/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-(assignment_7.aux) ) 
+{C:/Users/Chris/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+[2] [3] (assignment_7.aux) ) 
 Here is how much of TeX's memory you used:
  4130 strings out of 492970
  61267 string characters out of 3126593
- 134404 words of memory out of 3000000
+ 135404 words of memory out of 3000000
  7904 multiletter control sequences out of 15000+200000
  42012 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,9n,32p,395b,202s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
-/dvips/lm/lm-mathsy.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts
-/enc/dvips/lm/lm-mathit.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/f
-onts/enc/dvips/lm/lm-rm.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/f
-onts/enc/dvips/lm/lm-mathex.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2
-.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/Chris/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Chris/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Chris/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Chris/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Chris/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Chris/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Chris/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Chris/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Chris/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Chris/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Chri
-s/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb>
-Output written on assignment_7.pdf (2 pages, 138672 bytes).
+{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/f
+onts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2
+.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Chris/AppData/Local/Programs/MiKT
+eX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Chris/AppData/Local/Programs/MiKT
+eX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/Chris/AppData/Local/Programs/
+MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/Chris/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Chris/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Chris/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Chris/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Chris/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Chris/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Chris/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Chris
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Chr
+is/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users
+/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Us
+ers/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb>
+Output written on assignment_7.pdf (3 pages, 140855 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
+ 63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

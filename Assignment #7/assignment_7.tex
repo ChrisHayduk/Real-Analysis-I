@@ -100,6 +100,20 @@ m^*\left(A \cap \bigcup_{i=1}^{\infty} E_i\right) = \sum_{i=1}^{\infty} m^*(A \c
 \begin{problem}{4}
 \end{problem}
 
-Suppose $E$ is measurable and $E \subset P$.
+Suppose $E$ is measurable and $E \subset P$. Define $E_i = E \mathring{+} r_i$, where $r_i$ is defined as in the proof from our notes. Then $E_i \subset P_i$ for every $i$.\\
+
+In addition, since $<P_i>$ is a disjoint sequence of measurable sets and $E_i \subset P_i$, we have that $<E_i>$ is a disjoint sequence of measurable sets as well. Moreover, $\cup E_i \subset \cup P_i \subset [0, 1)$.\\
+
+From the above statements, we have that,
+\begin{align*}
+m(\cup E_i) = \sum mE_i \leq m([0, 1)) = 1
+\end{align*}
+
+Now, measure is modulo addition invariant, so $mE = mE_i$ for every $i$. Suppose $mE > 0$. Then,
+\begin{align*}
+\sum mE = \sum E_i = m(\cup E_i) \to \infty
+\end{align*}
+
+Thus, in order for $m(\cup E_i) < m([0, 1)) = 1$ to hold, $mE_i = mE = 0$.
 
 \end{document}
