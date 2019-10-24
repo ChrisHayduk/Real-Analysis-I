@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Assignment 7}
+
+\author{Chris Hayduk}
+\date{October 24, 2019}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Let $C = [0, 1] \sim [\cup O_n]$, where $O_n$ is defined as in the problem. Then $C = [0, 1] \cap \widetilde{[\cup O_n]}$. Since each $O_n$ is an open interval, and we know that a countable union of open sets is open, then $\cup O_n$ is open as well and, hence, $\widetilde{[\cup O_n]}$ is closed. Since $[0, 1]$ is closed, we then have that $C$ is closed.\\
+
+In addition, by Theorem 12, we know that each closed set is measurable, so $C$ is measurable.\\
+
+Now take $C_k = [0, 1] \sim [\bigcup_{n=1}^{k} O_n]$. From the construction of $C$, we know that $C_k$ is the disjoint union of $2^k$ closed intervals, each with length $\frac{1}{3^k}$.\\
+
+Since $C = C_k \sim [\bigcup_{n=k+1}^{\infty} O_n]$, we have that $C \subset C_k$ for every $k \in \mathbb{N}$. Hence, $m(C) \leq m(C_k)$ for every $k$.\\
+
+Thus, by the countable additivity of Lebesgue measure and the property that, for any interval $I, m(I) = \ell(I)$, we have
+\begin{align*}
+m(C) \leq m(C_k) &= \sum_{n=1}^{2^k} \frac{1}{3^k}\\
+&= 2^k\left(\frac{1}{3^k}\right) = \left(\frac{2}{3}\right)^k
+\end{align*}
+
+Since $m(C) \leq \left(\frac{2}{3}\right)^k$ for any choice of $k$ and $\left(\frac{2}{3}\right)^k \to 0$ as $k \to \infty$, we have that $m(C) = 0$.
+
+\begin{problem}{2}
+\end{problem}
+
+Fix $\epsilon > 0$ and assume there is a finite union $U$ of open intervals such that $m^*(U \Delta E) < \epsilon/3$. That is, $m^*(U \sim E) + m^*(E \sim U) < \epsilon/3$.\\
+
+Moreover, there is an open set $V$ such that $E \sim U \subset V$ and $m^*V \leq m^*(E \sim U) + \epsilon/3$.\\
+
+Hence, we have that $E \subset U \cup V = O$ and,
+\begin{align*}
+m^*(O \sim E) &= m^*((U \cup V) \sim E)\\
+&= m^*((U \sim E) \cup (V \sim E))\\
+&\leq m^*((U \sim E) \cup (E \sim U) \cup (V \sim (E \sim U)))\\
+&\leq m^*(U \sim E) + m^*(E \sim U) + m^*(V \sim (E \sim U))\\
+&< \epsilon/3 + \epsilon/3 + \epsilon/3 = \epsilon
+\end{align*}
+
+\begin{problem}{3}
+\end{problem}
+
+We have, by countable subadditivity, that,
+\begin{align*}
+m^*\left(A \cap \bigcup_{i=1}^{\infty} E_i\right) &= m^*\left(\bigcup_{i=1}^{\infty} A \cap E_i\right)\\
+&\leq \sum_{i=1}^{\infty} m^*(A \cap E_i)
+\end{align*}
+
+In addition, we have for every $n \in \mathbb{N}$,
+\begin{align*}
+&\left(A \cap \bigcup_{i=1}^{\infty} E_i\right) \supset \left(\bigcup_{i=1}^{n} A \cap E_i\right)\\
+\implies &m^*\left(A \cap \bigcup_{i=1}^{\infty} E_i\right) \geq m^*\left(\bigcup_{i=1}^{n} A \cap E_i\right)\\
+\implies &m^*\left(A \cap \bigcup_{i=1}^{\infty} E_i\right) \geq \sum_{i=1}^{n} m^*(A \cap E_i)
+\end{align*}
+
+Since the left side of this inequality does not depend on the choice of $n$, we have that, 
+\begin{align*}
+m^*\left(A \cap \bigcup_{i=1}^{\infty} E_i\right) \geq \sum_{i=1}^{\infty} m^*(A \cap E_i)
+\end{align*}
+
+Thus,
+\begin{align*}
+m^*\left(A \cap \bigcup_{i=1}^{\infty} E_i\right) = \sum_{i=1}^{\infty} m^*(A \cap E_i)
+\end{align*}
+
+\begin{problem}{4}
+\end{problem}
+
+Suppose $E$ is measurable and $E \subset P$.
+
+\end{document}
