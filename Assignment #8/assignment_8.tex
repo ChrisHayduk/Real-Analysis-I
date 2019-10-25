@@ -1,0 +1,151 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Assignment 8}
+
+\author{Chris Hayduk}
+\date{October 31, 2019}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Let $\langle E_i \rangle = \langle P_i \rangle$ where $\langle P_i \rangle$ is the sequence of sets that yielded the non-measurable set $P$ from class. We have that,
+\begin{align*}
+&[0, 1) = \sqcup_{i=0}^{\infty} E_i\\
+\implies &m^*[0, 1) = m^*(\sqcup_{i=0}^{\infty} E_i) = 1
+\end{align*}
+
+By the countable subadditivity of outer measure, we have that,
+\begin{align*}
+m^*(\sqcup_{i=0}^{\infty} E_i) = 1 \leq \sum_{i=0}^{\infty} m^*E_i
+\end{align*}
+
+We also know that $m^*E_k = m^*E_j$ for every $k, j \in \mathbb{N}$ since outer measure is modulo addition translation invariant (by our in class proof). So $m^*E_i = c$ for some $c \geq 0 \in \mathbb{R}$ and for every $i \in \mathbb{N}$. However, observe that the above inequality does not hold if $c = 0$. Thus, we have that $c > 0$.\\
+
+Since $c > 0$, we have that $\sum_{i=0}^{\infty} m^*E_i = \sum_{i=0}^{\infty} c = \infty$. Hence, $\langle E_i \rangle$ is a sequence of disjoint sets with,
+\begin{align*}
+m^*(\sqcup E_i) = 1 < \sum m^*(E_i) = \infty
+\end{align*}
+
+\begin{problem}{2}
+\end{problem}
+
+Define $f(x)$ as,
+\begin{align*}
+f(x) = \begin{cases}
+-e^x & x \not\in P\\
+e^x & x \in P
+\end{cases}
+\end{align*}
+
+where P is the non-measurable set that we defined in class. By this definition, we can see that for every $x \not\in P$, $f(x) < 0$. In addition, for every $x \in P$, $x > 0$.\\
+
+It is clear that $-e^{x_1} = -e^{x_2} \implies x_1 = x_2$ and $e^{x_1} = e^{x_2} \implies x_1 = x_2$ by taking the logarithm of both sides of the equality. So to check that $f(x)$ assumes each value at most once, we need to check that $-e^{x_1} \neq e^{x_2}$ for any $x_1, x_2$ in the domain. However, this again is clear because $e^x > 0 \; \forall x$ and $-e^x < 0 \; \forall x$. Thus, it will never be the case that $-e^{x_1} \neq e^{x_2}$.\\
+
+Since $f(x)$ is one-to-one, the pre-image of $f(x) = \alpha$ for any $\alpha$ is a singleton, which we know is measurable with measure 0. Thus, statement (v) from Proposition 18 is satisfied. However, we have that $\{x: f(x) > 0\} = P$, which we know is a non-measurable set. Thus, statement (i) from Proposition 18 has been violated. We proved in class that (i) and (iv) are equivalent, so (iv) does not hold as well.
+
+\begin{problem}{3}
+\end{problem}
+
+Suppose the restrictions of $f$ to $D$ and $E$ are measurable. We know that $f$ is measurable on $D \cup E$ if $D \cup E$ is measurable and if $f$ it satisfies one of the statements in Proposition 18.\\
+
+Since the measurable sets are a $\sigma$-algebra and both $D$ and $E$ are measurable, $D \cup E$ is also measurable. Thus, we just need to show that $f$ satisfies one of the statements in Proposition 18. We will use statement (i) in this proof.\\
+
+Hence, in order for $f$ to satisfy statement (i), we need that for each real number $\alpha$, the set $\{x \in D \cup E: f(x) > \alpha\}$ is measurable.\\
+
+We see that we can rewrite the above statement as: for each real number $\alpha$, the set $\{x \in D: f(x) > \alpha\} \cup \{x \in E: f(x) > \alpha\}$ is measurable. Since $f$ is measurable when restricted to either $D$ or $E$, both of these sets are measurable. Furthermore, since the measurable sets are a $\sigma$-algebra, their union is also measurable. Thus, we have
+\begin{align*}
+\{x \in D: f(x) > \alpha\} \cup \{x \in E: f(x) > \alpha\} = \{x \in D \cup E: f(x) > \alpha\}
+\end{align*}
+
+is measurable for each real number $\alpha$. As a result, $f$ is measurable on $D \cup E$.\\
+
+Now suppose that f is measurable on $D \cup E$ and suppose both $D$ and $E$ are measurable. We need to show that it is measurable when restricted to $D$ and $E$.\\
+
+Again observe that $\{x \in D \cup E: f(x) > \alpha\} = \{x \in D: f(x) > \alpha\} \cup \{x \in E: f(x) > \alpha\}$. Since the measurable sets are a $\sigma$-algebra, let us perform operations on the set $\{x \in D \cup E: f(x) > \alpha\}$ in such a way that yields $\{x \in D: f(x) > \alpha\}$ and  $\{x \in E: f(x) > \alpha\}$. If we are able to do this, then we will have that $f$ is measurable when restricted to $D$ and $E$.\\
+
+Now for the derivation:
+\begin{align*}
+\{x \in D \cup E: f(x) > \alpha\} &= (\{x \in D \cup E: f(x) > \alpha\} \cap D) \cup (\{x \in D \cup E: f(x) > \alpha\} \cap E)\\
+&= \{x \in D: f(x) > \alpha\} \cup \{x \in E: f(x) > \alpha\}
+\end{align*}
+
+Since $D$ and $E$ are both measurable, the intersections of each of these sets with the original set are measurable. Thus, both $\{x \in D: f(x) > \alpha\}$ and $\{x \in E: f(x) > \alpha\}$ are measurable sets, and we have that $f$ is measurable when restricted to either $D$ or $E$.
+
+\begin{problem}{4}
+\end{problem}
+
+Let $\phi$ and $\psi$ be simple functions defined on some measurable set $E$. Then we have,
+\begin{align*}
+\phi = \sum_{k=1}^{n_1} c_{k} \cdot \chi_{E_{ck}}
+\end{align*}
+
+where $E_{ck} = \{x: \phi(x) = c_{k}\}$ and 
+\begin{align*}
+\psi = \sum_{k=1}^{n_2} d_{k} \cdot \chi_{E_{dk}}
+\end{align*}
+
+where $E_{dk} = \{x: \phi(x) = d_{k}\}$.\\
+
+If $n_1 < n_2$, let $c_{n_1 + 1}, \cdots, c_{n_2} = 0$. If $n_2 < n_1$, let $d_{n_2 + 1}, \cdots, d_{n_1} = 0$. Also let $n = \max\{n_1, n_2\}$. Then we have that,
+\begin{align*}
+\phi = \sum_{k=1}^{n_1} c_{k} \cdot \chi_{E_{ck}} = \sum_{k=1}^{n} c_{k} \cdot \chi_{E_{ck}}
+\end{align*}
+
+and 
+\begin{align*}
+\psi = \sum_{k=1}^{n_2} d_{k} \cdot \chi_{E_{dk}} = \sum_{k=1}^{n} d_{k} \cdot \chi_{E_{dk}}
+\end{align*}
+
+Thus, $\phi + \psi$ yields,
+\begin{align*}
+\phi + \psi &= \sum_{k=1}^{n_1} c_{k} \cdot \chi_{E_{ck}} + \sum_{k=1}^{n_2} d_{k} \cdot \chi_{E_{dk}}\\
+&= \sum_{k=1}^{n} c_{k} \cdot \chi_{E_{ck}} + \sum_{k=1}^{n} d_{k} \cdot \chi_{E_{dk}}\\
+&= \sum_{k=1}^{n} \left(c_{k} \cdot \chi_{E_{ck}} + d_{k} \cdot \chi_{E_{dk}}\right)
+\end{align*}
+
+We know that $\phi + \psi$ is measurable because simple functions are measurable and, by Proposition 19, the sum of any two measurable functions is measurable.\\
+
+Furthermore, since there are finitely many terms $c$ and $d$, there are only finitely many combinations $c + d$. In particular, there are $n$ values of $c$ and $n$ values of $d$. We know that $(\phi + \psi)(x)$ is a linear combination of these $c$ and $d$ values for each $x$. There are $2^n$ ways to take linear combinations of $c$ and $2^n$ ways to take linear combinations of $d$, so $\phi + \psi$ takes on $2^n + 2^n = 2^{n+1}$ possible values. Thus, $\phi + \psi$ takes on finitely many values and, hence, $\phi + \psi$ is a simple function.\\
+
+Now, $\phi \cdot \psi$ gives,
+\begin{align*}
+\phi \cdot \psi &= \sum_{k=1}^{n_1} c_{k} \cdot \chi_{E_{ck}} \cdot \sum_{k=1}^{n_2} d_{k} \cdot \chi_{E_{dk}}\\
+&= \sum_{k=1}^{n} c_{k} \cdot \chi_{E_{ck}} \cdot \sum_{k=1}^{n} d_{k} \cdot \chi_{E_{dk}}
+\end{align*}
+
+Once again, we have that $\phi \cdot \psi$ is measurable because simple functions are measurable and, by Proposition 19, multiplying any two measurable functions yields a measurable function.\\
+
+And again, we have that there are $2^n$ possible linear combinations of the $c$ values and $2^n$ possible linear combinations of the $d$ values. Thus, there are $2^n \cdot 2^n = 2^{2n} = 4^n$ possible values for $\phi \cdot \psi$. As a result, we have that $\phi \cdot \psi$ is measurable and takes on finitely many values, so it is a simple function.
+
+\end{document}
