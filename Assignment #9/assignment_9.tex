@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Assignment 9}
+
+\author{Chris Hayduk}
+\date{November 7, 2019}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Let $f$ be measurable and $B$ be a Borel set. Since $B$ is Borel, let $\langle E_i \rangle$ be a sequence of open sets such that $B = \cup E_i$.\\
+
+Since $f$ is measurable, we know that the inverse image of each open set under $f$ must be measurable. Thus, we know that $f^{-1}(E_i)$ is measurable for every $i$. As a result, we have
+\begin{align*}
+f^{-1}(B) &= f^{-1}(\cup E_i)\\
+&= \cup f^{-1}(E_i)
+\end{align*}
+
+Thus, $f^{-1}(B)$ is measurable.
+
+\begin{problem}{2}
+\end{problem}
+
+Let $f$ be a measurable real-valued function and let $g$ be a continuous function defined on $(-\infty, \infty)$.\\
+
+We know continuous functions are measurable, hence $g$ is also measurable.\\
+
+Now fix $c \in \mathbb{R}$. We have,
+\begin{align*}
+\{x: (g \circ f)(x) > c\} &= (g \circ f)^{-1}[(c, \infty)]\\
+&= f^{-1}[g^{-1}[(c, \infty)]]
+\end{align*}
+
+We know that the inverse image of an open set under a continuous function is open. Thus, $O = g^{-1}[(c, \infty)]$ is an open set. In addition, from the previous problem, we know that the inverse image of an open set under a measurable function is measurable. Hence,
+\begin{align*}
+f^{-1}[g^{-1}[(c, \infty)]] = f^{-1}(O)
+\end{align*}
+
+is measurable. As a result, $\{x: (g \circ f)(x) > c\}$, and thus $g \circ f$ satisfies the definition of a measurable function since $c$ was arbitrary.
+\newpage
+\begin{problem}{3}
+\end{problem}
+
+Let $E = \mathbb{R}$. If $f_n = \chi_{[n, \infty)}$, then $f_n(x) \to 0$. Now let $\delta = 1$ and $\epsilon = 1$.\\
+
+Choose $A \subset E$ with $mA < 1$ and let $N \in \mathbb{Z}$. For every $x \geq N$ such that $x \not\in A$, we have that 
+\begin{align*}
+|f_N(x) - f(x)| = |f_N(x) - 0| = |f_N(x)| \geq 1
+\end{align*}
+
+Thus, there does not exist a measurable set $A \subset E$ with $mA < \delta$ such that for all $x \not\in A$ and all $n \geq N$, $|f_n(x) - f(x)| < \epsilon$ when $E$ has infinite measure.
+
+\begin{problem}{4}
+\end{problem}
+
+Let $\langle f_n \rangle$ be a sequence of measurable functions that converges to a real-valued function $f$ a.e. on a measurable set $E$ with $mE < \infty$. Let $\eta > 0$ be given.
+\end{document}
