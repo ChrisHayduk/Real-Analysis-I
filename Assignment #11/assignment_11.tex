@@ -39,6 +39,14 @@
 \begin{problem}{1}
 \end{problem}
 
+Suppose $f$ is measurable, non-negative, and $\int f = 0$.. Let $E = \{x: f(x) > 0\}$. Thus, if we define $E_n = \{x: f(x) \geq \frac{1}{n}\}$, we have that $\cup E_n = E$.\\
+
+We know from Proposition 5 that $\int_{E_n} f = 0 \geq \left(\frac{1}{n}\right) mE_n$ for every $n$.\\
+
+Since measure is non-negative and $\frac{1}{n}$ is always positive, $0 \geq \left(\frac{1}{n}\right) mE_n \implies mE_n = 0$ for every $n$.\\
+
+As a result, we have that $mE = 0$. That is, the set of all $x$ where $f(x) = 0$ has measure 0. Hence, $f = 0$ almost everywhere.
+
 \begin{problem}{2}
 \end{problem}
 
@@ -47,5 +55,27 @@
 
 \begin{problem}{4}
 \end{problem}
+
+Let $f_n = \chi_{[n, n+1]}$. It is clear that for each $n$, $f_n$ equals 1 on $[n, n+1]$ and equals 0 everywhere else.\\
+
+Since for any given $x$, $f_n(x) = 1$ for at most two values of $n$ (if $x = n$ for some endpoint $n$), we have that
+\begin{align*}
+\lim_{n \to \infty} f_n(x) = 0 \; \forall x
+\end{align*} 
+
+Thus, we have that
+\begin{align*}
+\int \lim f_n = \int 0 = 0
+\end{align*}
+
+Now fix $n \in \mathbb{N}$. Observe that
+\begin{align*}
+\int f_n = 1 \times m([n, n+1]) = 1 (n + 1 - n) = 1
+\end{align*}
+
+Since this holds for every $n \in \mathbb{N}$, we have that $\underline{\lim} \int f_n = 1$. Thus, we can see that,
+\begin{align*}
+\int \lim f_n = 0 < \underline{\lim} \int f_n = 1
+\end{align*}
 
 \end{document}
