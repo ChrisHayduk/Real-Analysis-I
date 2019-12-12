@@ -1,0 +1,182 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Assignment 12}
+
+\author{Chris Hayduk}
+\date{December 12, 2019}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+\begin{itemize}
+
+\item  $D^+f(0)$:
+\begin{align*}
+D^+f(0) &= \overline{\lim}_{h \to 0^+} \frac{f(0+h) - f(0)}{h}\\
+&= \overline{\lim}_{h \to 0^+} \frac{f(h) - f(0)}{h}\\
+&= \overline{\lim}_{h \to 0^+} \frac{f(h) - 0}{h}\\
+&= \overline{\lim}_{h \to 0^+} \frac{h\sin(\frac{1}{h})}{h}\\
+&= \overline{\lim}_{h \to 0^+} \sin\left(\frac{1}{h}\right)
+\end{align*}
+
+Since $\sin\left(\frac{1}{x}\right)$ oscillates between -1 and 1 infinitely often as we approach 0, we have that,
+\begin{align*}
+D^+f(0) = \overline{\lim}_{h \to 0^+} \sin\left(\frac{1}{h}\right) = 1
+\end{align*}
+
+\item $D^-f(0)$:
+\begin{align*}
+D^-f(0) &= \overline{\lim}_{h \to 0^+} \frac{f(0) - f(0-h)}{h}\\
+&= \overline{\lim}_{h \to 0^+} \frac{f(0) - f(-h)}{h}\\
+&= \overline{\lim}_{h \to 0^+} \frac{0 - f(-h)}{h}\\
+&= \overline{\lim}_{h \to 0^+} \frac{-(-h)\sin(\frac{1}{-h})}{h}\\
+&= \overline{\lim}_{h \to 0^+} \sin\left(\frac{1}{-h}\right)
+\end{align*}
+
+Since we know $\sin\left(\frac{1}{x}\right)$ oscillates between -1 and 1 infinitely often as we approach 0, we have that $\sin\left(\frac{1}{-x}\right)$ oscillates between -1 and 1 infinitely as well. Hence,
+\begin{align*}
+D^-f(0) = \overline{\lim}_{h \to 0^+} \sin\left(\frac{1}{-h}\right) = 1
+\end{align*}
+
+By the same reasoning from the two above,
+
+\item $D_+f(0)$:
+
+\begin{align*}
+D_+f(0) &= \underline{\lim}_{h \to 0^+} \frac{f(0+h) - f(0)}{h}\\
+&= \underline{\lim}_{h \to 0^+} \frac{f(h) - f(0)}{h}\\
+&= \underline{\lim}_{h \to 0^+} \frac{f(h) - 0}{h}\\
+&= \underline{\lim}_{h \to 0^+} \frac{h\sin(\frac{1}{h})}{h}\\
+&= \underline{\lim}_{h \to 0^+} \sin\left(\frac{1}{h}\right)\\
+&= -1
+\end{align*}
+
+\item $D_-f(0)$:
+
+\begin{align*}
+D_-f(0) &= \underline{\lim}_{h \to 0^+} \frac{f(0) - f(0-h)}{h}\\
+&= \underline{\lim}_{h \to 0^+} \frac{f(0) - f(-h)}{h}\\
+&= \underline{\lim}_{h \to 0^+} \frac{0 - f(-h)}{h}\\
+&= \underline{\lim}_{h \to 0^+} \frac{-(-h)\sin(\frac{1}{-h})}{h}\\
+&= \underline{\lim}_{h \to 0^+} \sin\left(\frac{1}{-h}\right)\\
+&= -1
+\end{align*}
+\end{itemize}
+
+\newpage
+\begin{problem}{2}
+\end{problem}
+
+Since we know that $f$ assumes a local minimum at $c$, we know that $f(c) \leq f(c+h)$ for $h \in \mathbb{R}$ sufficiently small. As a result, we have that $f(c) - f(c-h) \leq 0$ and $f(c+h) - f(c) \geq 0$.\\
+
+This result implies that,
+\begin{align*}
+\frac{f(c+h) - f(c)}{h} \geq 0
+\end{align*}
+
+and
+
+\begin{align*}
+\frac{f(c) - f(c-h)}{h} \leq 0
+\end{align*}
+
+for $h > 0$ and $h$ sufficiently close to $0$. Thus, if we take limits with $h$ approaching $0$ from above, these inequalities are preserved. Hence,
+\begin{align*}
+D_-f(c) &= \underline{\lim}_{h \to 0^+} \frac{f(c) - f(c-h)}{h} \leq 0\\
+D^-f(c) &= \overline{\lim}_{h \to 0^+} \frac{f(c) - f(c-h)}{h} \leq 0\\
+D_+f(c) &= \underline{\lim}_{h \to 0^+} \frac{f(c+h) - f(c)}{h} \geq 0\\
+D^+f(c) &= \overline{\lim}_{h \to 0^+} \frac{f(c+h) - f(c)}{h} \geq 0
+\end{align*}
+
+Now, by the definitions of $\liminf$ and $\limsup$, we also have that
+\begin{align*}
+D_-f(c) \leq D^-f(c)
+\end{align*}
+
+and
+\begin{align*}
+D_+f(c) \leq D^+f(c)
+\end{align*}
+
+Putting it all together, we have
+\begin{align*}
+D_-f(c) \leq D^-f(c) \leq 0 \leq D_+f(c) \leq D^+f(c)
+\end{align*}
+
+when $f$ attains a local minimum at $c$.
+\newpage
+\begin{problem}{3}
+\end{problem}
+
+Let $g$ be a function on $[a, b]$ with $D^+g(x) \geq \epsilon$ for some $\epsilon > 0$ and for all values of $x \in (a, b)$. Then we have,
+\begin{align*}
+D^+g(x) = \overline{\lim}_{h \to 0^+} \frac{g(x+h) - g(x)}{h} \geq \epsilon
+\end{align*}
+
+Suppose that $g$ is not non-decreasing. That is, there exist $x, y \in [a, b]$ with $x < y$ such that $g(x) > g(y)$.\\
+
+By similar reasoning to question 2, we know that $D^+f(c) \leq 0$ when some function $f$ attains a maximum at some point $c$. Since $D^+g(x) \geq \epsilon > 0$ for all $x \in (a, b)$, $g$ does not attain a local maximum on $(a, b)$. Hence, $g$ is decreasing on $(a, y]$ and $D^+g(c) \leq 0$ for all $c \in (a, y)$, a contradiction. Thus, $g$ must be non-decreasing on $[a, b]$.\\
+
+Now let $f(x)$ be a continuous function on $[a, b]$ and assume $D^+f \geq 0$ on $(a, b)$.\\
+
+For any $\epsilon > 0$, $D^+(f(x) + \epsilon x) \geq \epsilon$ on $(a, b)$. Thus, $f(x) + \epsilon x$ is non-decreasing on $[a, b]$.\\
+
+Now let $x < y$. $f$ non-decreasing implies that $f(x) + \epsilon x \leq f(y) + \epsilon y$.\\
+
+Suppose for contradiction that $f(x) > f(y)$. Then, by the above inequality, we have
+\begin{align*}
+0 < f(x) - f(y) \leq \epsilon(x - y)
+\end{align*}
+
+Now choose $\epsilon = (f(x) - f(y))/(2(y-x))$. This yields,
+\begin{align*}
+f(x) - f(y) \leq (f(x) - f(y))/2
+\end{align*}
+
+This is a contradiction. Thus, when $x < y$, we have that $f(x) \leq f(y)$ and so $f$ is non-decreasing on $[a, b]$.
+
+\begin{problem}{4}
+\end{problem}
+
+For any $x$, we have that,
+\begin{align*}
+D^+(f+g)(x) &= \overline{\lim}_{h \to 0^+} \frac{(f+g)(x+h) - (f+g)(x)}{h}\\
+&= \overline{\lim}_{h \to 0^+} \frac{f(x+h) + g(x+h) - f(x) - g(x)}{h}\\
+&= \overline{\lim}_{h \to 0^+} \frac{f(x+h) - f(x) + g(x+h) - g(x)}{h}\\
+&= \overline{\lim}_{h \to 0^+} \left[\frac{f(x+h) - f(x)}{h} + \frac{g(x+h) - g(x)}{h}\right]\\
+&\leq \overline{\lim}_{h \to 0^+} \frac{f(x+h) - f(x)}{h} + \overline{\lim}_{h \to 0^+} \frac{g(x+h) - g(x)}{h}\\
+&= D^+f + D^+g
+\end{align*}
+
+\end{document}
