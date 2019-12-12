@@ -134,7 +134,12 @@ Putting it all together, we have
 D_-f(c) \leq D^-f(c) \leq 0 \leq D_+f(c) \leq D^+f(c)
 \end{align*}
 
-when $f$ attains a local minimum at $c$.
+when $f$ attains a local minimum at $c$.\\
+
+If $f$ attains a local minimum at $a$, we know from the above that $0 \leq D_+f(a) \leq D^+f(a)$ since $\frac{f(a+h) - f(a)}{h} \geq 0$ for small, positive values of $h$. However, we cannot make a statement about $D^-f(a)$ or $D_-f(a)$ because we do not know how the function behaves for values of $x < a$.\\
+
+Similarly, if $f$ attains a local minimum at $b$, we know from the above that $D_-f(b) \leq D^-f(b) \leq 0$ since $\frac{f(b) - f(b-h)}{h} \leq 0$ for small, positive values of $h$. However, we cannot make a statement about $D^+f(b)$ or $D_+f(b)$ because we do not know how the function behaves for values of $x > b$.
+
 \newpage
 \begin{problem}{3}
 \end{problem}
