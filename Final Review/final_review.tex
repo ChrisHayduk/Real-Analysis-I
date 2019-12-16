@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Real Analysis I: Final Exam Review}
+
+\author{Chris Hayduk}
+\date{December 17, 2019}
+
+\maketitle
+
+\section{Definitions}
+
+\begin{itemize}
+
+\item $\sigma\text{-algebra}$:\\
+
+A collection $\mathscr{A}$ of subsets of $X$ is called an $\textbf{algebra}$ of sets or a $\textbf{Boolean algebra}$ if (i) $A \cup B$ is in $\mathscr{A}$ whenever $A$ and $B$ are, and (ii) $\tilde{A}$ is in $\mathscr{A}$ whenever A is.\\
+
+$\mathscr{A}$ is called a $\mathbf{\sigma}\textbf{-algebra}$, or a $\textbf{Borel field}$, if it has the above properties $\textit{and}$ every union of a countable collection of sets in $\mathscr{A}$ is again in $\mathscr{A}$
+\\
+\item Uniform convergence of a sequence of functions:\\
+
+A sequence $\langle f_n \rangle$ of functions defined on a set $E$ is said to converge $\textbf{uniformly}$ on E if given $\epsilon > 0$, there is an $N$ such that for all $x \in E$ and all $n \geq N$, we have $|f(x) - f_n(x)| < \epsilon$.
+\\
+\item Borel sets:\\
+
+The collection $\mathscr{B}$ of Borel sets is the smallest $\sigma$-algebra which contains all of the open sets.
+\\
+\item $F_{\sigma}$ set:\\
+
+An $F_{\sigma}$ set is a countable union of closed sets.
+\\
+\item $G_{\delta}$ set:\\
+
+A $G_{\delta}$ set is a countable intersection of open sets.
+\\
+\item Outer measure:\\
+
+$m^*A = \inf_{A \subset \cup I_n} \Sigma \ell(I_n)$, where $\{I_n\}$ represents a countable collections of open intervals that cover $A$.
+\\
+\item Measurable set:\\
+
+A set $E$ is said to be $\textbf{measurable}$ if for each set $A$ we have $m^*A = m^*(A \cap E) + m^*(A \cap \tilde{E})$
+\\
+\item Measurable function:\\
+
+Let $f$ be an extended real-valued function whose domain is measurable. Then the following statements are equivalent:
+\begin{enumerate}
+\item For each real number $\alpha$, the set $\{x: f(x) > \alpha\}$ is measurable.
+\item For each real number $\alpha$, the set $\{x: f(x) \geq \alpha\}$ is measurable.
+\item For each real number $\alpha$, the set $\{x: f(x) < \alpha\}$ is measurable.
+\item For each real number $\alpha$, the set $\{x: f(x) \leq \alpha\}$ is measurable.
+\end{enumerate}
+These statements imply that, for each extended real number $\alpha$, the set $\{x: f(x) = \alpha\}$ is measurable.
+
+An extended real-valued function $f$ is said to be (Lebesgue) measurable if its domain is measurable and if it satisfies one of the first four statements above.
+\\
+\item Almost everywhere:\\
+
+A property is said to hold $\textbf{almost everywhere}$ (abbreviated a.e.) if the set of points where it fails to hold is a set of measure zero.
+\\
+\item Lebesgue integral of simple functions:
+
+\end{itemize}
+\end{document}
