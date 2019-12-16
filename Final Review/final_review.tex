@@ -87,7 +87,150 @@ An extended real-valued function $f$ is said to be (Lebesgue) measurable if its 
 
 A property is said to hold $\textbf{almost everywhere}$ (abbreviated a.e.) if the set of points where it fails to hold is a set of measure zero.
 \\
-\item Lebesgue integral of simple functions:
+\item Lebesgue integral of simple functions:\\
+
+Let $\phi = \Sigma_{i=1}^n a_i \chi_{E_i}$ with $E_i \cap E_j = \emptyset$ for $i \neq j$. Suppose each set $E_i$ is a measurable set of finite measure. Then,
+\begin{align*}
+\int \phi = \Sigma_{i=1}^n a_i mE_i
+\end{align*}
+\\
+\item Lebesgue integral of bounded measurable functions that vanish outside of a set of  finite measure:\\
+
+If $f$ is a bounded measurable function defined on a measurable set $E$ with $mE$ finite, we define the (Lebesgue) integral of $f$ over $E$ by
+\begin{align*}
+\int_E f(x)dx = \inf \int_E \psi(x) dx
+\end{align*}
+
+for all simple functions $\phi \geq f$.
+\\
+\item Lebesgue integral of non-negative measurable functions:\\
+
+If $f$ is a non-negative measurable function defined on a measurable set $E$, we define,
+\begin{align*}
+\int_E f = \sup_{h \leq f} \int_E h
+\end{align*}
+
+where $h$ is a bounded measurable function such that $m\{x: h(x) \neq 0\}$ is finite.
+\\
+\item Lebesgue integral of a general measurable function:\\
+
+A measurable function $f$ is said to be integrable over $E$ if $f^+$ and $f^-$ are both integrable over $E$ (that is, $\int_E f^+ < \infty$ and $\int_E f^- < \infty$). In this case, we define,
+\begin{align*}
+\int_E f = \int_E f^+ - \int_E f^-
+\end{align*}
+
+where $f^+ = \max\{f(x), 0\}$ and $f^- = \max\{-f(x), 0\}$
+\\
+\item Convergence in measure:\\
+
+A sequence $\langle f_n \rangle$ of measurable functions is said to converge to $f$ in measure if, given $\epsilon > 0$, there is an $N$ such that for all $n \geq N$ we have
+
+\begin{align*}
+m\{x: |f(x) - f_n(x)| \geq \epsilon\} < \epsilon
+\end{align*}
+\\
+\item Vitali cover:\\
+
+Let $g$ be a collection of intervals. Then we say that $g$ covers a set $E$ in the sense of Vitali if, for each $\epsilon > 0$ and any $x \in E$, there is an interval $I \in g$ such that $x \in I$ and $\ell(I) < \epsilon$. The intervals may be open, closed, or half-open, but we do not allow degenerate intervals consisting of only one point.
+\\
+\item Total variation:\\
+
+Let $f$ be a real-valued function defined on the interval $[a, b]$, and let $a = x_0 < x_1 < \cdots < x_k = b$ be any subdivision of $[a, b]$. Define 
+\begin{align*}
+p &= \Sigma_{i=1}^k [f(x_i) - f(x_{i-1})]^+\\
+n &= \Sigma_{i=1}^k [f(x_i) - f(x_{i-1})]^-\\
+t = n + p &= \Sigma_{i=1}^k |f(x_i) - f(x_{i-1})|
+\end{align*}
+
+where we use $r^+$ to denote $r$ if $r \geq 0$ and $0$ if $r \leq 0$, and set $r^- = |r| - r^+$. We have $f(b) - f(a) = p - n$. Set,
+\begin{align*}
+P &= \sup p\\
+N &= \sup n\\
+T &= \sup t
+\end{align*}
+
+where we take the supremum over all possible subdivisions of $[a, b]$.
+
+We clearly have $P \leq T \leq P+N$. We call P, N, T the positive, negative, and total variations of $f$ over $[a, b]$. We sometimes write $T_a^b$, $T_a^b(f)$, etc. to denote the dependence on the interval $[a, b]$ or on the function $f$.
+
+If $T < \infty$, we say that $f$ is of bounded variation over $[a, b]$.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Theorems}
+
+\begin{itemize}
+
+\item Heine-Borel Theorem:\\
+
+Let $F$ be a closed and bounded set of real numbers. Then each open covering of $F$ has a finite subcovering.
+
+That is, if a collection $\mathscr{C}$ is a collection of open sets such that $F \subset \cup \{O: O \in \mathscr{C}\}$, then there is a collection $\{O_1, O_2, ..., O_n\}$ of sets in $\mathscr{C}$ such that,
+\begin{align*}
+F \subset \cup_{i=1}^n O_i
+\end{align*}
+\\
+\item Egoroff's Theorem:\\
+
+If $\langle f_n \rangle$ is a sequence of measurable functions that converge to a real-valued function $f$ a.e. on a measurable set $E$ of finite measure, then given $\eta > 0$, there is a subset $A \subset E$ with $mA < \eta$ such that $f_n$ converges to $f$ uniformly on $E \sim A$
+\\
+\item Fatou's Lemma:\\
+
+If $\langle f_n \rangle$ is a sequence of non-negative measurable functions and $f_n(x) \to f(x)$ almost everywhere on a set $E$, then
+\begin{align*}
+\int_E f \leq \underline{\lim} \int_E f_n
+\end{align*}
+\\
+\item Monotone Convergence Theorem:\\
+
+Let $\langle f_n \rangle$ be an increasing sequence of non-negative measurable functions, and let $f = \lim f_n$ a.e. Then,
+\begin{align*}
+\int f = \lim \int f_n
+\end{align*}
+\\
+\item Lebesgue Convergence Theorem:\\
+
+Let $g$ be integrable over $E$ and let $\langle f_n \rangle$ be a sequence of measurable functions such that $|f_n| \leq g$ on $E$ and for almost all $x$ in $E$ we have $f(x) = \lim f_n(x)$. Then,
+\begin{align*}
+\int_E f = \lim \int_E f_n
+\end{align*}
+\\
+\item Vitali Covering Lemma:\\
+
+Let $E$ be a set of finite outer measure and $g$ a collection of intervals that covers $E$ in the sense of Vitali. Then, given $\epsilon > 0$, there is a finite disjoint collection $\{I_1, ..., I_n\}$ of intervals in $g$ such that,
+\begin{align*}
+m^*\left[E \sim \cup_{n=1}^N I_n\right] < \epsilon
+\end{align*}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Proofs}
+
+\begin{itemize}
+
+\item If $f$ is measurable and $f = g$ a.e., then $g$ is also measurable:\\
+
+Let $E$ be the set $\{x: f(x) \neq g(x)\}$. By hypothesis, $mE = 0$. Now,
+\begin{align*}
+\{x: g(x) > \alpha\} = \left[\{x: f(x) > \alpha\} \cup \{x \in E: g(x) > \alpha\}\right] \sim \{x \in E: g(x) \leq \alpha\}
+\end{align*}
+
+The first set on the right is measurable since $f$ is a measurable function. The last two sets on the right are measurable since they are subsets of $E$ and $mE = 0$. Thus, $\{x: g(x) > \alpha\}$ is measurable for each $\alpha$ and so $g$ is measurable.
+\\
+\item Bounded Convergence Theorem:\\
+
+Fill in later.
+\\
+\item Proposition 14 from Ch. 4:\\
+
+Fill in later.
+\\
+\item A function is of bounded variation iff it is the difference of two monotone real-valued functions:\\
+
+Fill in later.
 
 \end{itemize}
+
 \end{document}
