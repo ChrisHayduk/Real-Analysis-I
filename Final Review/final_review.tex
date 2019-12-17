@@ -239,11 +239,14 @@ By Proposition 3.23, we have that, given $\epsilon > 0$, there is an $N$ and a m
 \left|\int_E f_n - \int_E f\right| &= \left|\int_E f_n - f\right|\\
 &\leq \int_E \left|f_n - f\right|\\
 &= \int_{E \sim A} \left|f_n - f\right| + \int_A \left|f_n - f\right|\\
-&< \frac{\epsilon}{2mE}m(E \sim A) + \frac{\epsilon}{2mE}mA\\
-&< \frac{\epsilon}{2mE}mE + \frac{\epsilon}{2mE}mE\\
-&= \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon 
+&< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
 \end{align*}
-\\
+
+Hence,
+\begin{align*}
+\int_E f_n \to \int_E F
+\end{align*}
+
 \item Proposition 14 from Ch. 4:
 
 $\textbf{Proposition statement:}$ Let $f$ be a non-negative function which is integrable over a set $E$. Then given $\epsilon > 0$, there is a $\delta > 0$ such that for every set $A \subset E$ with $mA < \delta$, we have
