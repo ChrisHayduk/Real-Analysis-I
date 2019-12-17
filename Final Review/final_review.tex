@@ -219,18 +219,60 @@ Let $E$ be the set $\{x: f(x) \neq g(x)\}$. By hypothesis, $mE = 0$. Now,
 
 The first set on the right is measurable since $f$ is a measurable function. The last two sets on the right are measurable since they are subsets of $E$ and $mE = 0$. Thus, $\{x: g(x) > \alpha\}$ is measurable for each $\alpha$ and so $g$ is measurable.
 \\
-\item Bounded Convergence Theorem:\\
+\item Bounded Convergence Theorem:
 
-Fill in later.
+$\textbf{Theorem statement:}$ Let $\langle f_n \rangle$ be a sequence of measurable functions defined on a set $E$ of finite measure, and suppose that there is a real number $M$ such that $|f_n(x)| \leq M$ for all $n$ and all $x$. If $f(x) = \lim f_n(x)$ for each $x$ in $E$, then
+\begin{align*}
+\int_E f = \lim \int_E f_n
+\end{align*}
+
+$\textbf{Proof:}$
+
+By Proposition 3.23, we have that, given $\epsilon > 0$, there is an $N$ and a measurable set $A \subset E$ with $mA < \frac{\epsilon}{4M}$ such that for $n \geq N$ and $x \in E \sim A$, we have $|f_n(x) - f(x)| < \frac{\epsilon}{2mE}$. Then,
+\begin{align*}
+\left|\int_E f_n - \int_E f\right| &= \left|\int_E f_n - f\right|\\
+&\leq \int_E \left|f_n - f\right|\\
+&= \int_{E \sim A} \left|f_n - f\right| + \int_A \left|f_n - f\right|\\
+&< \frac{\epsilon}{2mE}m(E \sim A) + \frac{\epsilon}{2mE}mA\\
+&< \frac{\epsilon}{2mE}mE + \frac{\epsilon}{2mE}mE\\
+&= \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon 
+\end{align*}
 \\
-\item Proposition 14 from Ch. 4:\\
+\item Proposition 14 from Ch. 4:
 
-Fill in later.
+$\textbf{Proposition statement:}$ Let $f$ be a non-negative function which is integrable over a set $E$. Then given $\epsilon > 0$, there is a $\delta > 0$ such that for every set $A \subset E$ with $mA < \delta$, we have
+\begin{align*}
+\int_A f < \epsilon
+\end{align*}
+
+$\textbf{Proof:}$
+
+The proposition would be trivial if $f$ were bounded, so assume $f$ is unbounded. Set $f_n(x) = f(x)$ if $f(x) \leq n$ and $f_n(x) = n$ otherwise. Then each $f_n(x)$ is bounded and $f_n$ converges to $f$ at each point.
+
+By the Monotone Convergence Theorem, there is an $N$ such that $\int_E f_N > \int_E f - \epsilon/2$ and $\int_E f - f_N < \epsilon/2$.
+
+Choose $\delta < \frac{\epsilon}{2N}$. If $mA < \delta$, we have
+\begin{align*}
+\int_A f &= \int_A (f - f_N) + \int_A f_N\\
+&< \int_E (f - f_N) + NmA\\
+&< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\end{align*}
+
+as required.
 \\
 \item A function is of bounded variation iff it is the difference of two monotone real-valued functions:\\
 
-Fill in later.
+Let $f$ be of bounded variation and set $g(x) = P^x_a$ and $h(x) = N_a^x$. Then $g$ and $h$ are monotone increasing functions which are real valued, since $0 \leq P_a^x \leq T_a^x \leq T_a^b < \infty$ and $0 \leq N_a^x \leq T_a^x \leq T_a^b < \infty$.
 
+But $f(x) = g(x) - h(x) + f(a) = g(x) - [h(x) - f(a)]$ by Lemma 4. Since $h - f(a)$ is a monotone function, we have $f$ expressed as the difference of two monotone functions.
+
+On the other hand, if $f = g - h$ on $[a, b]$ with $g$ and $h$ increasing, then for any subdivision we have
+\begin{align*}
+t = \Sigma |f(x_i) - f(x_{i-1})| &\leq \Sigma [g(x_i) - g(x_{i-1})] + \Sigma [h(x_i) - h(x_{i-1})]\\
+&= g(b) - g(a) + h(b) - h(a) < \infty
+\end{align*}
+
+Since this holds for any subdivision of $[a, b]$, we have that $t < \infty$ for all such subdivisions. Hence, $\sup t = T < \infty$ and so $f$ is of bounded variation.
 \end{itemize}
 
 \end{document}
