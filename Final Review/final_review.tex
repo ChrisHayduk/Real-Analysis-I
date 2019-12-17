@@ -89,11 +89,17 @@ A property is said to hold $\textbf{almost everywhere}$ (abbreviated a.e.) if th
 \\
 \item Lebesgue integral of simple functions:\\
 
-Let $\phi = \Sigma_{i=1}^n a_i \chi_{E_i}$ with $E_i \cap E_j = \emptyset$ for $i \neq j$. Suppose each set $E_i$ is a measurable set of finite measure. Then,
+If $\phi$ is a simple function and $\{a_1, ..., a_n\}$ the set of non-zero values of $\phi$, then
 \begin{align*}
-\int \phi = \Sigma_{i=1}^n a_i mE_i
+\phi = \Sigma a_i \chi_{A_i}
 \end{align*}
-\\
+where $A_i = \{x: \phi(x) = a_i\}$. This representation for $\phi$ is called the canonical representation, and it is characterized by the fact that the $A_i$ are disjoint and the $a_i$ distinct and non-zero.
+
+If $\phi$ vanishes outside a set of finite measure, we define the integral of $\phi$ by
+\begin{align*}
+\int \phi(x) dx = \Sigma_{i=1}^n a_i mA_i
+\end{align*}
+
 \item Lebesgue integral of bounded measurable functions that vanish outside of a set of  finite measure:\\
 
 If $f$ is a bounded measurable function defined on a measurable set $E$ with $mE$ finite, we define the (Lebesgue) integral of $f$ over $E$ by
